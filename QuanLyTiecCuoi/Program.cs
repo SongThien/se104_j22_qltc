@@ -16,7 +16,8 @@ namespace QuanLyTiecCuoi
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TiepNhanSanh_form());
+            //Application.Run(new TiepNhanSanh_form());
+            BUS.Class2.sss();
         }
     }
 }
