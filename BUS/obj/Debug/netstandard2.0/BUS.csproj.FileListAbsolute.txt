@@ -1,0 +1,14 @@
+C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\BUS\bin\Debug\netstandard2.0\BUS.deps.json
+C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\BUS\bin\Debug\netstandard2.0\BUS.dll
+C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\BUS\bin\Debug\netstandard2.0\BUS.pdb
+C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\BUS\bin\Debug\netstandard2.0\DAO.dll
+C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\BUS\bin\Debug\netstandard2.0\DTO.dll
+C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\BUS\bin\Debug\netstandard2.0\DAO.pdb
+C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\BUS\bin\Debug\netstandard2.0\DTO.pdb
+C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\BUS\obj\Debug\netstandard2.0\BUS.csprojAssemblyReference.cache
+C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\BUS\obj\Debug\netstandard2.0\BUS.csproj.CoreCompileInputs.cache
+C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\BUS\obj\Debug\netstandard2.0\BUS.AssemblyInfoInputs.cache
+C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\BUS\obj\Debug\netstandard2.0\BUS.AssemblyInfo.cs
+C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\BUS\obj\Debug\netstandard2.0\BUS.csproj.CopyComplete
+C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\BUS\obj\Debug\netstandard2.0\BUS.dll
+C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\BUS\obj\Debug\netstandard2.0\BUS.pdb

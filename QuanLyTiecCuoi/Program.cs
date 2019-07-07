@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyTiecCuoi.QuanLy_forms;
 
 namespace QuanLyTiecCuoi
 {
@@ -16,7 +17,7 @@ namespace QuanLyTiecCuoi
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TiepNhanSanh_form());
+            Application.Run(new DanhSachTiecCuoi_form());
         }
     }
 }

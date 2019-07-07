@@ -1,1 +1,19 @@
 C:\Users\lamlee\Desktop\se104_j22_qltc\QuanLyTiecCuoi\bin\Debug\QuanLyTiecCuoi.exe.config
+C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\QuanLyTiecCuoi\bin\Debug\QuanLyTiecCuoi.exe.config
+C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\QuanLyTiecCuoi\bin\Debug\QuanLyTiecCuoi.exe
+C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\QuanLyTiecCuoi\bin\Debug\QuanLyTiecCuoi.pdb
+C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\QuanLyTiecCuoi\bin\Debug\BUS.dll
+C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\QuanLyTiecCuoi\bin\Debug\DAO.dll
+C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\QuanLyTiecCuoi\bin\Debug\BUS.pdb
+C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\QuanLyTiecCuoi\bin\Debug\DAO.pdb
+C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\QuanLyTiecCuoi\obj\Debug\QuanLyTiecCuoi.csprojAssemblyReference.cache
+C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\QuanLyTiecCuoi\obj\Debug\QuanLyTiecCuoi.DatTiecCuoi_form.resources
+C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\QuanLyTiecCuoi\obj\Debug\QuanLyTiecCuoi.QuanLy_forms.DanhSachTiecCuoi_form.resources
+C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\QuanLyTiecCuoi\obj\Debug\QuanLyTiecCuoi.QuanLy_forms.LapHoaDon_form.resources
+C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\QuanLyTiecCuoi\obj\Debug\QuanLyTiecCuoi.TiepNhanSanh_form.resources
+C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\QuanLyTiecCuoi\obj\Debug\QuanLyTiecCuoi.Properties.Resources.resources
+C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\QuanLyTiecCuoi\obj\Debug\QuanLyTiecCuoi.csproj.GenerateResource.cache
+C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\QuanLyTiecCuoi\obj\Debug\QuanLyTiecCuoi.csproj.CoreCompileInputs.cache
+C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\QuanLyTiecCuoi\obj\Debug\QuanLyTiecCuoi.csproj.CopyComplete
+C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\QuanLyTiecCuoi\obj\Debug\QuanLyTiecCuoi.exe
+C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\QuanLyTiecCuoi\obj\Debug\QuanLyTiecCuoi.pdb
