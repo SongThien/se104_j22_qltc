@@ -25,29 +25,6 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
-      },
-      "DAO/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "DTO": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/DAO.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/DAO.dll": {}
-        }
-      },
-      "DTO/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "compile": {
-          "bin/placeholder/DTO.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/DTO.dll": {}
-        }
       }
     }
   },
@@ -194,21 +171,10 @@
         "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
-    },
-    "DAO/1.0.0": {
-      "type": "project",
-      "path": "../DAO/DAO.csproj",
-      "msbuildProject": "../DAO/DAO.csproj"
-    },
-    "DTO/1.0.0": {
-      "type": "project",
-      "path": "../DTO/DTO.csproj",
-      "msbuildProject": "../DTO/DTO.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "DAO >= 1.0.0",
       "NETStandard.Library >= 2.0.3"
     ]
   },
@@ -219,11 +185,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MSI GAMING\\Documents\\GitHub\\se104_j22_qltc\\BUS\\BUS.csproj",
-      "projectName": "BUS",
-      "projectPath": "C:\\Users\\MSI GAMING\\Documents\\GitHub\\se104_j22_qltc\\BUS\\BUS.csproj",
+      "projectUniqueName": "C:\\Users\\MSI GAMING\\Documents\\GitHub\\se104_j22_qltc\\DTO\\DTO.csproj",
+      "projectName": "DTO",
+      "projectPath": "C:\\Users\\MSI GAMING\\Documents\\GitHub\\se104_j22_qltc\\DTO\\DTO.csproj",
       "packagesPath": "C:\\Users\\MSI GAMING\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\MSI GAMING\\Documents\\GitHub\\se104_j22_qltc\\BUS\\obj\\",
+      "outputPath": "C:\\Users\\MSI GAMING\\Documents\\GitHub\\se104_j22_qltc\\DTO\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -241,11 +207,7 @@
       },
       "frameworks": {
         "netstandard2.0": {
-          "projectReferences": {
-            "C:\\Users\\MSI GAMING\\Documents\\GitHub\\se104_j22_qltc\\DAO\\DAO.csproj": {
-              "projectPath": "C:\\Users\\MSI GAMING\\Documents\\GitHub\\se104_j22_qltc\\DAO\\DAO.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
