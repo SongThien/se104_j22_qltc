@@ -49,7 +49,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DTO_KhachHang.cs" />
     <Compile Include="QuanLy_forms\DatTiecCuoi_form.cs">
       <SubType>Form</SubType>
     </Compile>

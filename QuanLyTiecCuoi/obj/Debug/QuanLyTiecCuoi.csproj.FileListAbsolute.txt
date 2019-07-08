@@ -17,3 +17,4 @@ C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\QuanLyTiecCuoi\obj\Debug\Qua
 C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\QuanLyTiecCuoi\obj\Debug\QuanLyTiecCuoi.csproj.CopyComplete
 C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\QuanLyTiecCuoi\obj\Debug\QuanLyTiecCuoi.exe
 C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\QuanLyTiecCuoi\obj\Debug\QuanLyTiecCuoi.pdb
+C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\QuanLyTiecCuoi\bin\Debug\System.Data.SqlClient.dll

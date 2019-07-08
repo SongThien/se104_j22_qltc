@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "63d6a17a5c6760cd9367a2488d4ea3b373cc9047"
+    "signature": "6b3b852808e46dc22f2760cef39218fd96fdbb2d"
   },
   "compilationOptions": {},
   "targets": {
@@ -20,7 +20,7 @@
       },
       "Dapper/1.60.6": {
         "dependencies": {
-          "System.Data.SqlClient": "4.6.0",
+          "System.Data.SqlClient": "4.6.1",
           "System.Reflection.Emit.Lightweight": "4.3.0",
           "System.Reflection.TypeExtensions": "4.4.0"
         },
@@ -211,7 +211,7 @@
           "Newtonsoft.Json": "12.0.1",
           "Serenity.Core": "3.9.9",
           "System.Data.Common": "4.3.0",
-          "System.Data.SqlClient": "4.6.0",
+          "System.Data.SqlClient": "4.6.1",
           "System.Threading.Thread": "4.3.0"
         },
         "runtime": {
@@ -317,7 +317,7 @@
           }
         }
       },
-      "System.Data.SqlClient/4.6.0": {
+      "System.Data.SqlClient/4.6.1": {
         "dependencies": {
           "Microsoft.Win32.Registry": "4.5.0",
           "System.Buffers": "4.4.0",
@@ -329,8 +329,8 @@
         },
         "runtime": {
           "lib/netstandard2.0/System.Data.SqlClient.dll": {
-            "assemblyVersion": "4.5.0.0",
-            "fileVersion": "4.6.27110.4"
+            "assemblyVersion": "4.5.0.1",
+            "fileVersion": "4.6.27618.1"
           }
         }
       },
@@ -724,6 +724,9 @@
         }
       },
       "DTO/1.0.0": {
+        "dependencies": {
+          "System.Data.SqlClient": "4.6.1"
+        },
         "runtime": {
           "DTO.dll": {}
         }
@@ -994,12 +997,12 @@
       "path": "system.data.common/4.3.0",
       "hashPath": "system.data.common.4.3.0.nupkg.sha512"
     },
-    "System.Data.SqlClient/4.6.0": {
+    "System.Data.SqlClient/4.6.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-gwItUWW1BMCckicFO85c8frFaMK8SGqYn5IeA3GSX4Lmid+CjXETfoHz7Uv+Vx6L0No7iRc/7cBL8gd6o9k9/g==",
-      "path": "system.data.sqlclient/4.6.0",
-      "hashPath": "system.data.sqlclient.4.6.0.nupkg.sha512"
+      "sha512": "sha512-7MTJhBFt4/tSJ2VRpG+TQNPcDdbCnWuoYzbe0kD5O3mQ7aZ2Q+Q3D9Y5Y3/aper5Gp3Lrs+8edk9clvxyPYXPw==",
+      "path": "system.data.sqlclient/4.6.1",
+      "hashPath": "system.data.sqlclient.4.6.1.nupkg.sha512"
     },
     "System.Diagnostics.Debug/4.3.0": {
       "type": "package",

@@ -5,11 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using DAO;
-using DTO;
 
 namespace BUS
 {
-    class BUS_QuanLyLoaiSanh
+    public static class BUS_QuanLyLoaiSanh
     {
         public static DataTable GetLoaiSanhTable()
         {

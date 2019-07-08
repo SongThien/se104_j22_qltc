@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data;
-
+using BUS;
 namespace QuanLyTiecCuoi.QuanLy_forms
 {
     public partial class DanhSachTiecCuoi_form : Form
@@ -26,10 +26,8 @@ namespace QuanLyTiecCuoi.QuanLy_forms
         private void Button1_Click(object sender, EventArgs e)
         {
             DataTable f;
-            f = BUS.Class2.getData();
+            f = BUS_QuanLyLoaiSanh.GetLoaiSanhTable();
             dataGridView1.DataSource = f;
-
-
         }
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

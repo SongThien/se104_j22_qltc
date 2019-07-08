@@ -23,7 +23,7 @@ namespace DAO
         {
             try
             {
-                sCon = new SqlConnection(@"Data Source=DESKTOP-QCK00KC\SQLEXPRESS;Initial Catalog=QuanLyTiecCuoi;Integrated Security=True");
+                sCon = new SqlConnection(@"Data Source=MSI\SQLEXPRESS;Initial Catalog=QuanLyTiecCuoi;Integrated Security=True");
 
                 //if (sCon.State == ConnectionState.Closed)
 
