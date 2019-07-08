@@ -16,7 +16,11 @@ namespace DTO
         {
             MA_MON_AN = maMonAn;
             TEN_MON_AN = tenMonAn;
-            DON_GIA = long.Parse(donGia);
+            DON_GIA = decimal.Parse(donGia);
+        }
+        public DTO_MonAn()
+        {
+
         }
     }
 }
