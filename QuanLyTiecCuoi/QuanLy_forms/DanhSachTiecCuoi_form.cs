@@ -25,9 +25,7 @@ namespace QuanLyTiecCuoi.QuanLy_forms
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            DataTable f;
-            f = BUS_QuanLyLoaiSanh.GetLoaiSanhTable();
-            dataGridView1.DataSource = f;
+            
         }
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -37,7 +35,7 @@ namespace QuanLyTiecCuoi.QuanLy_forms
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            //something
+            //ss
         }
     }
 }
