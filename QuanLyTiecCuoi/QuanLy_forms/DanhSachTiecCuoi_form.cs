@@ -34,5 +34,10 @@ namespace QuanLyTiecCuoi.QuanLy_forms
         {
             
         }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            //something
+        }
     }
 }

@@ -16,5 +16,15 @@ namespace QuanLyTiecCuoi.QuanLy_forms
         {
             InitializeComponent();
         }
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Label20_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
