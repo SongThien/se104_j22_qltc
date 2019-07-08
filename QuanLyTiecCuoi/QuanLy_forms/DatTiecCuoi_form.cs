@@ -90,8 +90,20 @@ namespace QuanLyTiecCuoi
 
         private bool isAllFilledKH()
         {
-            //if (tbTenChure.Te)
-            return false;
+            if (tbTenChure.Text.Trim() == "")
+            {
+                return false;
+            }
+            if (tbTenCodau.Text.Trim() == "")
+            {
+                return false;
+            }
+            if (tbSDT.Text.Trim() == "")
+            {
+                return false;
+            }
+
+            return true;
         }
 
 
@@ -108,11 +120,22 @@ namespace QuanLyTiecCuoi
             }
             else
             {
-                if isAllFilledKH()
-                bool state = BUS_DatTiecCuoi.themKhachHang(newkh);
-                if (!state)
+                if (isAllFilledKH())
                 {
-                    MessageBox.Show("Khong Thang Cong");
+                    bool state = BUS_DatTiecCuoi.themKhachHang(newkh);
+                    if (!state)
+                    {
+                        MessageBox.Show("Khong Thang Cong");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thang Cong");
+                        cmbMaKH.Items.Add(maKH);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Hay dien day du thong tin");
                 }
             }
 

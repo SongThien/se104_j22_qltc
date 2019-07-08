@@ -47,7 +47,8 @@ namespace DAO
 
         public static bool themKhachHang(DTO.DTO_KhachHang kh)
         {
-            String sql = String.Format(@"INSERT KHACHHANG (MA_KHACH_HANG, TEN_CHU_RE, TEN_CO_DAU,SDT) VALUE ({0},{1},{2},{3})", kh.MA_KHACH_HANG, kh.TEN_CHU_RE, kh.TEN_CO_DAU, kh.SDT);
+            String sql = String.Format(@"INSERT INTO KHACH_HANG (MA_KHACH_HANG, TEN_CHU_RE, TEN_CO_DAU,SDT) VALUES ('{0}','{1}','{2}',{3})", kh.MA_KHACH_HANG, kh.TEN_CHU_RE, kh.TEN_CO_DAU, kh.SDT);
+            Console.WriteLine(sql);
             if (DatabaseHelper.ExcuteSql(sql) > 0)
             {
                 return true;
