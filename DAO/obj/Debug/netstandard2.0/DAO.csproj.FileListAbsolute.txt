@@ -22,3 +22,27 @@ C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\DAO\bin\Debug\netstandard2.0
 C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\DAO\bin\Debug\netstandard2.0\Accessibility.xml
 C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\DAO\bin\Debug\netstandard2.0\System.Deployment.xml
 C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\DAO\bin\Debug\netstandard2.0\System.Runtime.Serialization.Formatters.Soap.xml
+C:\Users\lamlee\Desktop\se104_j22_qltc\DAO\bin\Debug\netstandard2.0\DAO.deps.json
+C:\Users\lamlee\Desktop\se104_j22_qltc\DAO\bin\Debug\netstandard2.0\DAO.dll
+C:\Users\lamlee\Desktop\se104_j22_qltc\DAO\bin\Debug\netstandard2.0\DAO.pdb
+C:\Users\lamlee\Desktop\se104_j22_qltc\DAO\bin\Debug\netstandard2.0\DTO.dll
+C:\Users\lamlee\Desktop\se104_j22_qltc\DAO\bin\Debug\netstandard2.0\System.Windows.Forms.dll
+C:\Users\lamlee\Desktop\se104_j22_qltc\DAO\bin\Debug\netstandard2.0\System.Security.dll
+C:\Users\lamlee\Desktop\se104_j22_qltc\DAO\bin\Debug\netstandard2.0\System.Configuration.dll
+C:\Users\lamlee\Desktop\se104_j22_qltc\DAO\bin\Debug\netstandard2.0\Accessibility.dll
+C:\Users\lamlee\Desktop\se104_j22_qltc\DAO\bin\Debug\netstandard2.0\System.Deployment.dll
+C:\Users\lamlee\Desktop\se104_j22_qltc\DAO\bin\Debug\netstandard2.0\System.Runtime.Serialization.Formatters.Soap.dll
+C:\Users\lamlee\Desktop\se104_j22_qltc\DAO\bin\Debug\netstandard2.0\DTO.pdb
+C:\Users\lamlee\Desktop\se104_j22_qltc\DAO\bin\Debug\netstandard2.0\System.Windows.Forms.xml
+C:\Users\lamlee\Desktop\se104_j22_qltc\DAO\bin\Debug\netstandard2.0\System.Security.xml
+C:\Users\lamlee\Desktop\se104_j22_qltc\DAO\bin\Debug\netstandard2.0\System.Configuration.xml
+C:\Users\lamlee\Desktop\se104_j22_qltc\DAO\bin\Debug\netstandard2.0\Accessibility.xml
+C:\Users\lamlee\Desktop\se104_j22_qltc\DAO\bin\Debug\netstandard2.0\System.Deployment.xml
+C:\Users\lamlee\Desktop\se104_j22_qltc\DAO\bin\Debug\netstandard2.0\System.Runtime.Serialization.Formatters.Soap.xml
+C:\Users\lamlee\Desktop\se104_j22_qltc\DAO\obj\Debug\netstandard2.0\DAO.csprojAssemblyReference.cache
+C:\Users\lamlee\Desktop\se104_j22_qltc\DAO\obj\Debug\netstandard2.0\DAO.csproj.CoreCompileInputs.cache
+C:\Users\lamlee\Desktop\se104_j22_qltc\DAO\obj\Debug\netstandard2.0\DAO.AssemblyInfoInputs.cache
+C:\Users\lamlee\Desktop\se104_j22_qltc\DAO\obj\Debug\netstandard2.0\DAO.AssemblyInfo.cs
+C:\Users\lamlee\Desktop\se104_j22_qltc\DAO\obj\Debug\netstandard2.0\DAO.csproj.CopyComplete
+C:\Users\lamlee\Desktop\se104_j22_qltc\DAO\obj\Debug\netstandard2.0\DAO.dll
+C:\Users\lamlee\Desktop\se104_j22_qltc\DAO\obj\Debug\netstandard2.0\DAO.pdb

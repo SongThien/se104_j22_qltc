@@ -11,10 +11,10 @@ namespace DAO
 {
     public class DatabaseHelper
     {
-        private static bool DEBUG = false;
-        private static SqlConnection sCon;
+        public static bool DEBUG = false;
+        public static SqlConnection sCon;
         //public static String CONNECTION_STRING { get; set; }
-        private static SqlCommand mCommand;
+        public static SqlCommand mCommand;
         /// <summary>
         /// Open connection to Database
         /// </summary>
@@ -23,7 +23,7 @@ namespace DAO
         {
             try
             {
-                sCon = new SqlConnection(@"Data Source=MSI\SQLEXPRESS;Initial Catalog=QuanLyTiecCuoi;Integrated Security=True");
+                sCon = new SqlConnection(@"Data Source=DESKTOP-QCK00KC\SQLEXPRESS;Initial Catalog=QuanLyTiecCuoi;Integrated Security=True");
 
                 //if (sCon.State == ConnectionState.Closed)
 
