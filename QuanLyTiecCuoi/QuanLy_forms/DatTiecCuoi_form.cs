@@ -127,6 +127,7 @@ namespace QuanLyTiecCuoi
         {
             if (s != null)
             {
+                cmbMaKH.Text = s.MA_KHACH_HANG;
                 tbTenChure.Text = s.TEN_CHU_RE;
                 tbTenCodau.Text = s.TEN_CO_DAU;
                 tbSDT.Text = s.SDT;
@@ -236,6 +237,8 @@ namespace QuanLyTiecCuoi
             DTO.DTO_Sanh s = BUS_DatTiecCuoi.getThongTinSanh(tc.MA_SANH);
             DTO.DTO_Ca c = BUS_DatTiecCuoi.getThongTinCa(tc.MA_CA);
             dateTimePicker1.Text = tc.NGAY_TO_CHUC;
+            cmbCa.Text = c.MA_CA;
+
         }
 
         private void HienThiDsMonAn(String tc)
@@ -252,8 +255,12 @@ namespace QuanLyTiecCuoi
         {
             String maTC = cmbMaTiecCuoi.Text;
             DTO.DTO_TiecCuoi tc = BUS_DatTiecCuoi.getThongTinTiecCuoi(maTC);
-            MessageBox.Show(tc.MA_CA);
             DTO.DTO_KhachHang kh = BUS_DatTiecCuoi.getThongTinKhachHang(tc.MA_KHACH_HANG);
+            DTO.DTO_Sanh s = BUS_DatTiecCuoi.getThongTinSanh(tc.MA_SANH);
+            cmbSanh.Text = s.MA_LOAI_SANH;
+            numSLBan.Value = tc.SL_BAN;
+            numSLDuTru.Value = tc.SL_BAN_DU_TRU;
+            tbDatCoc.Text = tc.TIEN_DAT_COC.ToString();
             HienThiThongTinKH(kh);
             HienThiThongTinTC(tc);
             HienThiDsMonAn(maTC);
@@ -270,6 +277,11 @@ namespace QuanLyTiecCuoi
         }
 
         private void DateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CmbSanh_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

@@ -47,19 +47,19 @@
             this.label31 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.numSLDuTru = new System.Windows.Forms.NumericUpDown();
             this.label24 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.cmbCa = new System.Windows.Forms.ComboBox();
+            this.numSLBan = new System.Windows.Forms.NumericUpDown();
             this.label22 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.tbDatCoc = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label19 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.cmbSanh = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dtMA = new System.Windows.Forms.DataGridView();
             this.label28 = new System.Windows.Forms.Label();
@@ -88,8 +88,8 @@
             this.cmbDsDichVu = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSLDuTru)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSLBan)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtMA)).BeginInit();
             this.groupBox4.SuspendLayout();
@@ -211,19 +211,19 @@
             this.groupBox2.Controls.Add(this.label31);
             this.groupBox2.Controls.Add(this.label26);
             this.groupBox2.Controls.Add(this.label25);
-            this.groupBox2.Controls.Add(this.numericUpDown3);
+            this.groupBox2.Controls.Add(this.numSLDuTru);
             this.groupBox2.Controls.Add(this.label24);
-            this.groupBox2.Controls.Add(this.comboBox5);
-            this.groupBox2.Controls.Add(this.numericUpDown2);
+            this.groupBox2.Controls.Add(this.cmbCa);
+            this.groupBox2.Controls.Add(this.numSLBan);
             this.groupBox2.Controls.Add(this.label22);
-            this.groupBox2.Controls.Add(this.textBox7);
+            this.groupBox2.Controls.Add(this.tbDatCoc);
             this.groupBox2.Controls.Add(this.label21);
             this.groupBox2.Controls.Add(this.label20);
             this.groupBox2.Controls.Add(this.dateTimePicker1);
             this.groupBox2.Controls.Add(this.label19);
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.label16);
-            this.groupBox2.Controls.Add(this.comboBox4);
+            this.groupBox2.Controls.Add(this.cmbSanh);
             this.groupBox2.Location = new System.Drawing.Point(42, 243);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(432, 291);
@@ -295,12 +295,12 @@
             this.label25.TabIndex = 17;
             this.label25.Text = "Còn lại:";
             // 
-            // numericUpDown3
+            // numSLDuTru
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(323, 132);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(89, 20);
-            this.numericUpDown3.TabIndex = 16;
+            this.numSLDuTru.Location = new System.Drawing.Point(323, 132);
+            this.numSLDuTru.Name = "numSLDuTru";
+            this.numSLDuTru.Size = new System.Drawing.Size(89, 20);
+            this.numSLDuTru.TabIndex = 16;
             // 
             // label24
             // 
@@ -311,20 +311,20 @@
             this.label24.TabIndex = 15;
             this.label24.Text = "Bàn dự trữ:";
             // 
-            // comboBox5
+            // cmbCa
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(323, 53);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(89, 21);
-            this.comboBox5.TabIndex = 14;
+            this.cmbCa.FormattingEnabled = true;
+            this.cmbCa.Location = new System.Drawing.Point(323, 53);
+            this.cmbCa.Name = "cmbCa";
+            this.cmbCa.Size = new System.Drawing.Size(89, 21);
+            this.cmbCa.TabIndex = 14;
             // 
-            // numericUpDown2
+            // numSLBan
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(323, 91);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(89, 20);
-            this.numericUpDown2.TabIndex = 12;
+            this.numSLBan.Location = new System.Drawing.Point(323, 91);
+            this.numSLBan.Name = "numSLBan";
+            this.numSLBan.Size = new System.Drawing.Size(89, 20);
+            this.numSLBan.TabIndex = 12;
             // 
             // label22
             // 
@@ -335,12 +335,12 @@
             this.label22.TabIndex = 11;
             this.label22.Text = "Số lượng bàn:";
             // 
-            // textBox7
+            // tbDatCoc
             // 
-            this.textBox7.Location = new System.Drawing.Point(101, 197);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(121, 20);
-            this.textBox7.TabIndex = 10;
+            this.tbDatCoc.Location = new System.Drawing.Point(101, 197);
+            this.tbDatCoc.Name = "tbDatCoc";
+            this.tbDatCoc.Size = new System.Drawing.Size(121, 20);
+            this.tbDatCoc.TabIndex = 10;
             // 
             // label21
             // 
@@ -395,13 +395,14 @@
             this.label16.TabIndex = 3;
             this.label16.Text = "Tổng tiền bàn:";
             // 
-            // comboBox4
+            // cmbSanh
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(101, 91);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 21);
-            this.comboBox4.TabIndex = 2;
+            this.cmbSanh.FormattingEnabled = true;
+            this.cmbSanh.Location = new System.Drawing.Point(101, 91);
+            this.cmbSanh.Name = "cmbSanh";
+            this.cmbSanh.Size = new System.Drawing.Size(121, 21);
+            this.cmbSanh.TabIndex = 2;
+            this.cmbSanh.SelectedIndexChanged += new System.EventHandler(this.CmbSanh_SelectedIndexChanged);
             // 
             // groupBox3
             // 
@@ -674,8 +675,8 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSLDuTru)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSLBan)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtMA)).EndInit();
@@ -700,19 +701,19 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.NumericUpDown numSLDuTru;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.ComboBox cmbCa;
+        private System.Windows.Forms.NumericUpDown numSLBan;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox tbDatCoc;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox cmbSanh;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label lbDonGia;
         private System.Windows.Forms.Label label8;

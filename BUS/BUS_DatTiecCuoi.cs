@@ -54,5 +54,6 @@ namespace BUS
         {
             return DAO.DAO_Ca.getThongTinCa(maC);
         }
+        
     }
 }
