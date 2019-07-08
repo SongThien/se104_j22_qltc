@@ -42,7 +42,7 @@
             this.btnXoaSanh = new System.Windows.Forms.Button();
             this.btnSuaSanh = new System.Windows.Forms.Button();
             this.btnThemSanh = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lbDonGia = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.soLuongban = new System.Windows.Forms.NumericUpDown();
             this.ghiChu = new System.Windows.Forms.TextBox();
@@ -157,7 +157,7 @@
             this.groupBox2.Controls.Add(this.btnXoaSanh);
             this.groupBox2.Controls.Add(this.btnSuaSanh);
             this.groupBox2.Controls.Add(this.btnThemSanh);
-            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.lbDonGia);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.soLuongban);
             this.groupBox2.Controls.Add(this.ghiChu);
@@ -212,14 +212,14 @@
             this.btnThemSanh.UseVisualStyleBackColor = true;
             this.btnThemSanh.Click += new System.EventHandler(this.Button4_Click);
             // 
-            // label8
+            // lbDonGia
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(304, 73);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(13, 13);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "0";
+            this.lbDonGia.AutoSize = true;
+            this.lbDonGia.Location = new System.Drawing.Point(304, 73);
+            this.lbDonGia.Name = "lbDonGia";
+            this.lbDonGia.Size = new System.Drawing.Size(13, 13);
+            this.lbDonGia.TabIndex = 15;
+            this.lbDonGia.Text = "0";
             // 
             // label7
             // 
@@ -334,7 +334,7 @@
         private System.Windows.Forms.Button btnXoaSanh;
         private System.Windows.Forms.Button btnSuaSanh;
         private System.Windows.Forms.Button btnThemSanh;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lbDonGia;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.NumericUpDown soLuongban;
         private System.Windows.Forms.TextBox ghiChu;

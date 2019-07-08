@@ -50,6 +50,10 @@ namespace BUS
         {
             return DAO.DAO_QuanLySanh.suaSanh(s);
         }
+        public static DTO.DTO_LoaiSanh getThongTinLoaiSanh(String maLS)
+        {
+            return DAO.DAO_QuanLyLoaiSanh.getThongTinLoaiSanh(maLS);
+        }
 
     }
 }

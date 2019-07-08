@@ -144,6 +144,7 @@ namespace QuanLyTiecCuoi
             s.TEN_SANH = txtTenSanh.Text;
             s.MA_LOAI_SANH = LoaiSanh.Text;
             s.SO_LUONG_BAN = int.Parse(soLuongban.Value.ToString());
+            s.GHI_CHU = ghiChu.Text;
             if (BUS_TiepNhanSanh.themSanh(s) == true)
             {
                 MessageBox.Show("Thêm Thành  Công!", "Thông Báo!");
@@ -166,7 +167,7 @@ namespace QuanLyTiecCuoi
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            lbDonGia.Text = BUS_TiepNhanSanh.getThongTinLoaiSanh(LoaiSanh.Text).DON_GIA_TOI_THIEU.ToString();
         }
         private int bonus = 0;
         private String GetNewMaLS(bool neww = false)

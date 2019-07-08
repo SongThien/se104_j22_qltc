@@ -18,7 +18,8 @@ namespace DAO
         }
         public static bool themSanh(DTO.DTO_Sanh s)
         {
-            string sTruyVan = string.Format(@"INSERT INTO SANH(MA_SANH, TEN_SANH,MA_LOAI_SANH, SO_LUONG_BAN) values ('{0}','{1}','{2}',{3})", s.MA_SANH, s.TEN_SANH,s.MA_LOAI_SANH ,s.SO_LUONG_BAN);
+            string sTruyVan = string.Format(@"INSERT INTO SANH(MA_SANH, TEN_SANH,MA_LOAI_SANH, SO_LUONG_BAN, GHI_CHU) values ('{0}','{1}','{2}',{3},'{4}')", s.MA_SANH, s.TEN_SANH,s.MA_LOAI_SANH ,s.SO_LUONG_BAN, s.GHI_CHU);
+            Console.WriteLine(sTruyVan);
             if (DatabaseHelper.ExcuteSql(sTruyVan) > 0)
             {
                 return true;

@@ -19,7 +19,7 @@ namespace DAO
                 result.MA_SANH = maS;
                 result.TEN_SANH = row["TEN_SANH"].ToString();
                 result.MA_LOAI_SANH = row["MA_LOAI_SANH"].ToString();
-                result.SL_BAN_TOI_DA = int.Parse(row["SL_BAN_TOI_DA"].ToString());
+                result.SO_LUONG_BAN = int.Parse(row["SO_LUONG_BAN"].ToString());
                 result.GHI_CHU = row["GHI_CHU"].ToString();
             }
             return result;

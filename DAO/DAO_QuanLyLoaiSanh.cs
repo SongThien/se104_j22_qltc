@@ -42,5 +42,20 @@ namespace DAO
             }
             return false;
         }
+        public static DTO.DTO_LoaiSanh getThongTinLoaiSanh(String maLS)
+        {
+            String sql = String.Format(@"SELECT * FROM LOAI_SANH WHERE MA_LOAI_SANH = '{0}'", maLS);
+            DataTable da = DatabaseHelper.GetData(sql);
+            DTO.DTO_LoaiSanh result = null;
+            if (da.Rows.Count > 0)
+            {
+                result = new DTO.DTO_LoaiSanh();
+                DataRow row = da.Rows[0];
+                result.MA_LOAI_SANH = maLS;
+                result.TEN_LOAI_SANH = row["TEN_LOAI_SANH"].ToString();
+                result.DON_GIA_TOI_THIEU = int.Parse(row["DON_GIA_TOI_THIEU"].ToString());
+            }
+            return result;
+        }
     }
 }
