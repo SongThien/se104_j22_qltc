@@ -15,7 +15,7 @@ namespace DTO
         public string SDT { get; set; }
        
 
-        public DTO_KhachHang(string maKH, string tenChuRe, string sdt, string tenCoDau)
+        public DTO_KhachHang(string maKH, string tenChuRe, string tenCoDau, string sdt)
         {
             MA_KHACH_HANG = maKH;
             TEN_CHU_RE = tenChuRe;
@@ -24,7 +24,9 @@ namespace DTO
             
         }
 
-
+        public DTO_KhachHang()
+        {
+        }
 
         public static implicit operator DTO_KhachHang(DTO_Sanh v)
         {
