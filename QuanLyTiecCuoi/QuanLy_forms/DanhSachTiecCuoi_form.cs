@@ -25,6 +25,11 @@ namespace QuanLyTiecCuoi.QuanLy_forms
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            DataTable f;
+            f = BUS.Class2.getData();
+            dataGridView1.DataSource = f;
+
+
         }
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

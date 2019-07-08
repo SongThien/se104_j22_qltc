@@ -50,6 +50,10 @@
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "Serenity.Data": {
+              "target": "Package",
+              "version": "[3.9.9, )"
             }
           },
           "imports": [

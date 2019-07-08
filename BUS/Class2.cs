@@ -1,12 +1,14 @@
 ﻿using System;
+using System.Data;
 
 namespace BUS
 {
     public class Class2
     {
-        public static int sss()
+        public static DataTable getData()
         {
-            return DAO.Class1.get();
+            return DAO.KhachHang.getTatCa();
         }
+
     }
 }
