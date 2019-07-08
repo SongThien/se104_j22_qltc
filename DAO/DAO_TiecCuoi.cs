@@ -26,10 +26,12 @@ namespace DAO
         public static DTO.DTO_TiecCuoi getThongTinTiecCuoi(String maTC)
         {
             String sql = String.Format(@"SELECT * FROM TIEC_CUOI WHERE MA_TIEC_CUOI = '{0}'", maTC);
+            Console.WriteLine(sql);
             DataTable da = DatabaseHelper.GetData(sql);
             DTO.DTO_TiecCuoi result = null;
             if (da.Rows.Count > 0)
             {
+                Console.WriteLine("ok");
                 result = new DTO.DTO_TiecCuoi();
                 DataRow row = da.Rows[0];
                 result.MA_TIEC_CUOI = maTC;
@@ -40,8 +42,8 @@ namespace DAO
                 result.TIEN_DAT_COC = int.Parse(row["TIEN_DAT_COC"].ToString());
                 result.SL_BAN = int.Parse(row["SL_BAN"].ToString());
                 result.SL_BAN_DU_TRU = int.Parse(row["SL_BAN_DU_TRU"].ToString());
-
             }
+            Console.WriteLine("ok");
             return result;
         }
     }

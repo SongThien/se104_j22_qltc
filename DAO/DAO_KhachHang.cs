@@ -37,8 +37,6 @@ namespace DAO
                 result.MA_KHACH_HANG = maKH;
                 result.TEN_CHU_RE = row["TEN_CHU_RE"].ToString();
                 result.TEN_CO_DAU = row["TEN_CO_DAU"].ToString();
-                result.NS_CHU_RE = row["NS_CHU_RE"].ToString();
-                result.NS_CO_DAU = row["NS_CO_DAU"].ToString();
                 result.SDT = row["SDT"].ToString();
             }
             return result;
@@ -46,7 +44,7 @@ namespace DAO
 
         public static bool themKhachHang(DTO.DTO_KhachHang kh)
         {
-            String sql = String.Format(@"INSERT INTO KHACH_HANG (MA_KHACH_HANG, TEN_CHU_RE, TEN_CO_DAU, NS_CHU_RE, NS_CO_DAU, SDT) VALUES ('{0}','{1}','{2}',{3},{4},'{5}')", kh.MA_KHACH_HANG, kh.TEN_CHU_RE, kh.TEN_CO_DAU, kh.NS_CHU_RE, kh.NS_CO_DAU, kh.SDT);
+            String sql = String.Format(@"INSERT INTO KHACH_HANG (MA_KHACH_HANG, TEN_CHU_RE, TEN_CO_DAU, SDT) VALUES ('{0}','{1}','{2}','{3}')", kh.MA_KHACH_HANG, kh.TEN_CHU_RE, kh.TEN_CO_DAU, kh.SDT);
             Console.WriteLine(sql);
             if (DatabaseHelper.ExcuteSql(sql) > 0)
             {
@@ -57,7 +55,7 @@ namespace DAO
         }
         public static bool capNhatThongTinKH(DTO.DTO_KhachHang kh)
         {
-            String sql = String.Format(@"UPDATE KHACH_HANG SET TEN_CHU_RE='{0}', TEN_CO_DAU='{1}', NS_CHU_RE = '{2}', NS_CO_DAU='{3}', SDT='{4}' WHERE MA_KHACH_HANG='{5}' ", kh.TEN_CHU_RE, kh.TEN_CO_DAU, kh.NS_CHU_RE, kh.NS_CO_DAU, kh.SDT, kh.MA_KHACH_HANG);
+            String sql = String.Format(@"UPDATE KHACH_HANG SET TEN_CHU_RE='{0}', TEN_CO_DAU='{1}', SDT='{2}' WHERE MA_KHACH_HANG='{3}' ", kh.TEN_CHU_RE, kh.TEN_CO_DAU, kh.SDT, kh.MA_KHACH_HANG);
             if (DatabaseHelper.ExcuteSql(sql) > 0)
             {
                 return true;

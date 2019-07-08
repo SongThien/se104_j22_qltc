@@ -34,17 +34,14 @@
             this.tbSDT = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.cmbMaKH = new System.Windows.Forms.ComboBox();
-            this.tbSNCD = new System.Windows.Forms.TextBox();
             this.tbTenCodau = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.tbSNCR = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.tbTenChure = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button9 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.bttThemDT = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.cmbMaTiecCuoi = new System.Windows.Forms.ComboBox();
             this.label31 = new System.Windows.Forms.Label();
@@ -77,7 +74,7 @@
             this.bttThemMA = new System.Windows.Forms.Button();
             this.cmbDsMonAn = new System.Windows.Forms.ComboBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dtDV = new System.Windows.Forms.DataGridView();
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -96,7 +93,7 @@
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtMA)).BeginInit();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtDV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,11 +104,8 @@
             this.groupBox1.Controls.Add(this.tbSDT);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.cmbMaKH);
-            this.groupBox1.Controls.Add(this.tbSNCD);
             this.groupBox1.Controls.Add(this.tbTenCodau);
             this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.tbSNCR);
-            this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.tbTenChure);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label11);
@@ -124,7 +118,7 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(324, 143);
+            this.button8.Location = new System.Drawing.Point(324, 80);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(89, 23);
             this.button8.TabIndex = 24;
@@ -165,14 +159,7 @@
             this.cmbMaKH.Name = "cmbMaKH";
             this.cmbMaKH.Size = new System.Drawing.Size(216, 21);
             this.cmbMaKH.TabIndex = 20;
-            this.cmbMaKH.SelectedIndexChanged += new System.EventHandler(this.HienThiThongTiKH);
-            // 
-            // tbSNCD
-            // 
-            this.tbSNCD.Location = new System.Drawing.Point(323, 110);
-            this.tbSNCD.Name = "tbSNCD";
-            this.tbSNCD.Size = new System.Drawing.Size(89, 20);
-            this.tbSNCD.TabIndex = 7;
+            this.cmbMaKH.SelectedIndexChanged += new System.EventHandler(this.LoadThongTinKH);
             // 
             // tbTenCodau
             // 
@@ -189,22 +176,6 @@
             this.label14.Size = new System.Drawing.Size(65, 13);
             this.label14.TabIndex = 5;
             this.label14.Text = "Tên cô dâu:";
-            // 
-            // tbSNCR
-            // 
-            this.tbSNCR.Location = new System.Drawing.Point(324, 79);
-            this.tbSNCR.Name = "tbSNCR";
-            this.tbSNCR.Size = new System.Drawing.Size(89, 20);
-            this.tbSNCR.TabIndex = 4;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(326, 58);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(54, 13);
-            this.label13.TabIndex = 3;
-            this.label13.Text = "Sinh năm:";
             // 
             // tbTenChure
             // 
@@ -234,7 +205,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.button9);
-            this.groupBox2.Controls.Add(this.button5);
+            this.groupBox2.Controls.Add(this.bttThemDT);
             this.groupBox2.Controls.Add(this.button6);
             this.groupBox2.Controls.Add(this.cmbMaTiecCuoi);
             this.groupBox2.Controls.Add(this.label31);
@@ -270,14 +241,14 @@
             this.button9.Text = "Đặt tiệc  / Cập nhật";
             this.button9.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // bttThemDT
             // 
-            this.button5.Location = new System.Drawing.Point(257, 13);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 23;
-            this.button5.Text = "Thêm";
-            this.button5.UseVisualStyleBackColor = true;
+            this.bttThemDT.Location = new System.Drawing.Point(257, 13);
+            this.bttThemDT.Name = "bttThemDT";
+            this.bttThemDT.Size = new System.Drawing.Size(75, 23);
+            this.bttThemDT.TabIndex = 23;
+            this.bttThemDT.Text = "Thêm";
+            this.bttThemDT.UseVisualStyleBackColor = true;
             // 
             // button6
             // 
@@ -395,6 +366,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(216, 20);
             this.dateTimePicker1.TabIndex = 7;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.DateTimePicker1_ValueChanged);
             // 
             // label19
             // 
@@ -459,6 +431,7 @@
             this.dtMA.Name = "dtMA";
             this.dtMA.Size = new System.Drawing.Size(379, 173);
             this.dtMA.TabIndex = 21;
+            this.dtMA.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtMA_CellContentClick);
             // 
             // label28
             // 
@@ -562,7 +535,7 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.dataGridView2);
+            this.groupBox4.Controls.Add(this.dtDV);
             this.groupBox4.Controls.Add(this.label30);
             this.groupBox4.Controls.Add(this.label29);
             this.groupBox4.Controls.Add(this.label10);
@@ -581,13 +554,13 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Đặt dịch vụ";
             // 
-            // dataGridView2
+            // dtDV
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(23, 136);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(379, 182);
-            this.dataGridView2.TabIndex = 23;
+            this.dtDV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtDV.Location = new System.Drawing.Point(23, 136);
+            this.dtDV.Name = "dtDV";
+            this.dtDV.Size = new System.Drawing.Size(379, 182);
+            this.dtDV.TabIndex = 23;
             // 
             // label30
             // 
@@ -708,7 +681,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtMA)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtDV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
 
@@ -719,11 +692,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox tbSDT;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox tbSNCD;
         private System.Windows.Forms.TextBox tbTenCodau;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox tbSNCR;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox tbTenChure;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
@@ -767,7 +737,7 @@
         private System.Windows.Forms.Button bttThemKH;
         private System.Windows.Forms.ComboBox cmbMaKH;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button bttThemDT;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.ComboBox cmbMaTiecCuoi;
         private System.Windows.Forms.Label label31;
@@ -776,6 +746,6 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.DataGridView dtMA;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dtDV;
     }
 }

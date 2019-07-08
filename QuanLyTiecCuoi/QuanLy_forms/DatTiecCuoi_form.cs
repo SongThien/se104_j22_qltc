@@ -53,6 +53,16 @@ namespace QuanLyTiecCuoi
             dtMA.ReadOnly = true;
             dtMA.MultiSelect = false;
         }
+        private void LoadDTDichVu()
+        {
+            dtDV.Columns.Add("id", "Mã dịch vụ");
+            dtDV.Columns.Add("name", "Tên dịch vụ");
+            dtDV.Columns.Add("price", "Số lượng");
+            dtDV.Columns.Add("note", "Đơn giá");
+            dtDV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dtDV.ReadOnly = true;
+            dtDV.MultiSelect = false;
+        }
         private void LoadDsDichVu()
         {
             DsDV = BUS.BUS_DatTiecCuoi.getDanhSachDichVu();
@@ -60,6 +70,12 @@ namespace QuanLyTiecCuoi
             {
                 cmbDsDichVu.Items.AddRange(DsDV.Item2);
             }
+        }
+        private void LoadDsTiecCuoi()
+        {
+            String[] s = BUS_DatTiecCuoi.getDsMaTiecCuoi();
+            cmbMaTiecCuoi.Items.AddRange(s);
+
         }
 
         private void GroupBox2_Enter(object sender, EventArgs e)
@@ -70,9 +86,11 @@ namespace QuanLyTiecCuoi
         private void Form1_Load(object sender, EventArgs e)
         {
             LoadKhachHang();
+            LoadDsTiecCuoi();
             LoadDsMonAn();
             LoadDsDichVu();
             LoadDTMonAn();
+            LoadDTDichVu();
         }
         
         private String GetNewMaKH(bool neww=false)
@@ -89,8 +107,6 @@ namespace QuanLyTiecCuoi
         {
             tbTenChure.Text = "";
             tbTenCodau.Text = "";
-            tbSNCR.Text = "";
-            tbSNCD.Text = "";
             tbSDT.Text = "";
         }
 
@@ -107,21 +123,24 @@ namespace QuanLyTiecCuoi
             ClearKHField();
         }
 
-        private void HienThiThongTiKH(object sender, EventArgs e)
+        private void HienThiThongTinKH(DTO.DTO_KhachHang s)
         {
-            DTO.DTO_KhachHang s = BUS_DatTiecCuoi.getThongTinKhachHang(cmbMaKH.Text);
             if (s != null)
             {
                 tbTenChure.Text = s.TEN_CHU_RE;
                 tbTenCodau.Text = s.TEN_CO_DAU;
-                tbSNCR.Text = s.NS_CHU_RE;
-                tbSNCD.Text = s.NS_CO_DAU;
                 tbSDT.Text = s.SDT;
             }
             else
             {
                 ClearKHField();
             }
+        }
+
+        private void LoadThongTinKH(object sender, EventArgs e)
+        {
+            DTO.DTO_KhachHang s = BUS_DatTiecCuoi.getThongTinKhachHang(cmbMaKH.Text);
+            HienThiThongTinKH(s);
         }
 
         private bool isAllFilledKH()
@@ -131,14 +150,6 @@ namespace QuanLyTiecCuoi
                 return false;
             }
             if (tbTenCodau.Text.Trim() == "")
-            {
-                return false;
-            }
-            if (tbSNCR.Text.Trim() == "")
-            {
-                return false;
-            }
-            if (tbSNCD.Text.Trim() == "")
             {
                 return false;
             }
@@ -156,10 +167,8 @@ namespace QuanLyTiecCuoi
             String maKH = cmbMaKH.Text;
             String tenChure = tbTenChure.Text;
             String tenCoDau = tbTenCodau.Text;
-            String snChuRe = tbSNCR.Text;
-            String snCoDau = tbSNCD.Text;
             String sdt = tbSDT.Text;
-            DTO.DTO_KhachHang newkh = new DTO.DTO_KhachHang(maKH, tenChure, tenCoDau,snChuRe, snCoDau, sdt);
+            DTO.DTO_KhachHang newkh = new DTO.DTO_KhachHang(maKH, tenChure, tenCoDau, sdt);
             if (BUS_DatTiecCuoi.getDanhSachKhachHang().Contains(maKH))
             {
                 bool state = BUS_DatTiecCuoi.capNhatThongTinKH(newkh);
@@ -222,10 +231,46 @@ namespace QuanLyTiecCuoi
         {
             dtMA.Rows.Remove(dtMA.CurrentRow);
         }
+        private void HienThiThongTinTC(DTO.DTO_TiecCuoi tc)
+        {
+            DTO.DTO_Sanh s = BUS_DatTiecCuoi.getThongTinSanh(tc.MA_SANH);
+            DTO.DTO_Ca c = BUS_DatTiecCuoi.getThongTinCa(tc.MA_CA);
+            dateTimePicker1.Text = tc.NGAY_TO_CHUC;
+        }
+
+        private void HienThiDsMonAn(String tc)
+        {
+
+        }
+
+        private void HienThiDsDichVu(String maTC)
+        {
+
+        }
 
         private void CmbMaTiecCuoi_SelectedIndexChanged(object sender, EventArgs e)
         {
-            String maTC = cmbMaTiecCuoi.SelectedText;
+            String maTC = cmbMaTiecCuoi.Text;
+            DTO.DTO_TiecCuoi tc = BUS_DatTiecCuoi.getThongTinTiecCuoi(maTC);
+            MessageBox.Show(tc.MA_CA);
+            DTO.DTO_KhachHang kh = BUS_DatTiecCuoi.getThongTinKhachHang(tc.MA_KHACH_HANG);
+            HienThiThongTinKH(kh);
+            HienThiThongTinTC(tc);
+            HienThiDsMonAn(maTC);
+            HienThiDsDichVu(maTC);
+
+        }
+
+        private void DtMA_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            cmbDsMonAn.Text = dtMA.Rows[e.RowIndex].Cells[1].Value.ToString();
+            lbDonGia.Text = dtMA.Rows[e.RowIndex].Cells[2].Value.ToString();
+            tbGhiChuMA.Text = dtMA.Rows[e.RowIndex].Cells[3].Value.ToString();
+
+        }
+
+        private void DateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
 
         }
     }

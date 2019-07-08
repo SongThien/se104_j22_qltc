@@ -8,7 +8,9 @@ namespace DTO
 {
     public class DTO_Ca
     {
-
+        public DTO_Ca()
+        {
+        }
 
         public DTO_Ca(string maCa, string thoiGianBD, string thoiGianKT)
         {

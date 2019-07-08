@@ -35,9 +35,24 @@ namespace BUS
         {
             return DAO.DAO_MonAn.getThongTinMonAn(maMA);
         }
-        public static String[] getDsMaTiecCuoi(String maTC)
+        public static String[] getDsMaTiecCuoi()
         {
-            return DAO.DAO_TiecCuoi.getDsMaTiecCuoi(maTC);
+            return DAO.DAO_TiecCuoi.getDsMaTiecCuoi();
+        }
+
+        public static DTO.DTO_TiecCuoi getThongTinTiecCuoi(String maTC)
+        {
+            return DAO.DAO_TiecCuoi.getThongTinTiecCuoi(maTC);
+        }
+
+        public static DTO.DTO_Sanh getThongTinSanh(String maS)
+        {
+            return DAO.DAO_Sanh.getThongTinSanh(maS);
+        }
+
+        public static DTO.DTO_Ca getThongTinCa(String maC)
+        {
+            return DAO.DAO_Ca.getThongTinCa(maC);
         }
     }
 }
