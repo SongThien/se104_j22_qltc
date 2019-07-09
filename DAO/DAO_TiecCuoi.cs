@@ -95,5 +95,39 @@ namespace DAO
             }
             return false;
         }
+
+        public static String[] getDsMaTiecCuoiChuaThanhToan()
+        {
+            String sql = @"SELECT MA_TIEC_CUOI FROM TIEC_CUOI WHERE MA_TIEC_CUOI NOT IN (SELECT MA_TIEC_CUOI FROM HOA_DON_THANH_TOAN)";
+            DataTable ds = DatabaseHelper.GetData(sql);
+            List<String> result = new List<String>();
+            if (ds != null)
+            {
+                foreach (DataRow row in ds.Rows)
+                {
+                    result.Add(row[0].ToString().Trim());
+                }
+
+                return result.ToArray();
+            }
+            return null;
+        }
+
+        public static String[] getDsMaTiecCuoiDaThanhToan()
+        {
+            String sql = @"SELECT MA_TIEC_CUOI FROM TIEC_CUOI WHERE MA_TIEC_CUOI IN (SELECT MA_TIEC_CUOI FROM HOA_DON_THANH_TOAN)";
+            DataTable ds = DatabaseHelper.GetData(sql);
+            List<String> result = new List<String>();
+            if (ds != null)
+            {
+                foreach (DataRow row in ds.Rows)
+                {
+                    result.Add(row[0].ToString().Trim());
+                }
+
+                return result.ToArray();
+            }
+            return null;
+        }
     }
 }

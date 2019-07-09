@@ -42,26 +42,6 @@ namespace QuanLyTiecCuoi
                 cmbDsMonAn.Items.AddRange(DsMA.Item2);
             }
         }
-        private void LoadDTMonAn()
-        {
-            dtMA.Columns.Add("id", "Mã món ăn");
-            dtMA.Columns.Add("name", "Tên món ăn");
-            dtMA.Columns.Add("price", "Đơn giá");
-            dtMA.Columns.Add("note", "Ghi chú");
-            dtMA.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dtMA.ReadOnly = true;
-            dtMA.MultiSelect = false;
-        }
-        private void LoadDTDichVu()
-        {
-            dtDV.Columns.Add("id", "Mã dịch vụ");
-            dtDV.Columns.Add("name", "Tên dịch vụ");
-            dtDV.Columns.Add("price", "Số lượng");
-            dtDV.Columns.Add("note", "Đơn giá");
-            dtDV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dtDV.ReadOnly = true;
-            dtDV.MultiSelect = false;
-        }
         private void LoadDsDichVu()
         {
             DsDV = BUS.BUS_DatTiecCuoi.getDanhSachDichVu();
