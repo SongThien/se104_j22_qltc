@@ -9,7 +9,7 @@ namespace DAO
     {
         public static DataTable getDsMonAnDaDat(String maTC)
         {
-            String sql = String.Format(@"SELECT DAT_MON_AN.MA_MON_AN, TEN_MON_AN, GHI_CHU FROM DAT_MON_AN , MON_AN WHERE MA_TIEC_CUOI = '{0}', DAT_MON_AN.MA_MON_AN = MON_AN.MA_MON_AN", maTC);
+            String sql = String.Format(@"SELECT DAT_MON_AN.MA_MON_AN, TEN_MON_AN, DON_GIA, GHI_CHU FROM DAT_MON_AN , MON_AN WHERE MA_TIEC_CUOI = '{0}' AND DAT_MON_AN.MA_MON_AN = MON_AN.MA_MON_AN", maTC);
             DataTable ds;
             ds = DatabaseHelper.GetData(sql);
             return ds;
@@ -27,7 +27,7 @@ namespace DAO
         }
         public static bool xoaDatMonAn(DTO.DTO_DatMonAn s)
         {
-            String sql = String.Format(@"DELETE FROM DAT_MON_AN WHERE MA_TIEC_CUOI = {0}, MA_MON_AN = {1}')",
+            String sql = String.Format(@"DELETE FROM DAT_MON_AN WHERE MA_TIEC_CUOI = '{0}' AND MA_MON_AN = '{1}'",
                 s.MA_TIEC_CUOI, s.MA_MON_AN);
             Console.WriteLine(sql);
             if (DatabaseHelper.ExcuteSql(sql) > 0)

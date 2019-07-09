@@ -11,15 +11,15 @@ namespace DTO
         public string MA_DICH_VU { get; set; }
         public string TEN_DICH_VU { get; set; }
         public decimal DON_GIA { get; set; }
-        public string GhiChu { get; set; }
-        public string HinhAnh { get; set; }
 
-        public DTO_DichVu(string maDichVu, string tenDichVu, string donGia, string ghiChu, string hinhAnh)
+        public DTO_DichVu(string maDichVu, string tenDichVu, string donGia)
         {
             MA_DICH_VU = maDichVu;
             TEN_DICH_VU = tenDichVu;
             DON_GIA = long.Parse(donGia);
 
         }
+        public DTO_DichVu()
+        { }
     }
 }

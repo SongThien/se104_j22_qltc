@@ -87,8 +87,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cmbDsDichVu = new System.Windows.Forms.ComboBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numSLDuTru)).BeginInit();
@@ -527,6 +525,7 @@
             // 
             // bttThemMA
             // 
+            this.bttThemMA.Enabled = false;
             this.bttThemMA.Location = new System.Drawing.Point(422, 33);
             this.bttThemMA.Name = "bttThemMA";
             this.bttThemMA.Size = new System.Drawing.Size(75, 23);
@@ -639,12 +638,14 @@
             // 
             // button3
             // 
+            this.button3.Enabled = false;
             this.button3.Location = new System.Drawing.Point(422, 42);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 3;
             this.button3.Text = "Thêm";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // numericUpDown1
             // 
@@ -673,8 +674,6 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.button5);
-            this.groupBox5.Controls.Add(this.button1);
             this.groupBox5.Controls.Add(this.button9);
             this.groupBox5.Location = new System.Drawing.Point(42, 565);
             this.groupBox5.Name = "groupBox5";
@@ -682,27 +681,6 @@
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Thao tác";
-            // 
-            // button5
-            // 
-            this.button5.Enabled = false;
-            this.button5.Location = new System.Drawing.Point(235, 110);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(155, 55);
-            this.button5.TabIndex = 26;
-            this.button5.Text = "Cập nhật danh sách dịch vụ";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(235, 40);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(155, 55);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "Cập nhật danh sách món ăn";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // DatTiecCuoi_form
             // 
@@ -796,7 +774,5 @@
         private System.Windows.Forms.DataGridView dtMA;
         private System.Windows.Forms.DataGridView dtDV;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button1;
     }
 }

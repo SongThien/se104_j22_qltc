@@ -107,5 +107,10 @@ namespace BUS
         {
             return DAO.DAO_TiepNhanSanh.getDanhSachSanh();
         }
+
+        public static DTO_DichVu getThongTinDichVu(String maDV)
+        {
+            return DAO.DAO_DichVu.getThongTinDichVu(maDV);
+        }
     }
 }

@@ -89,8 +89,6 @@ namespace QuanLyTiecCuoi
             LoadDsTiecCuoi();
             LoadDsMonAn();
             LoadDsDichVu();
-            LoadDTMonAn();
-            LoadDTDichVu();
         }
         
         private String GetNewMaKH()
@@ -209,6 +207,14 @@ namespace QuanLyTiecCuoi
             return ma;
         }
 
+        private DTO.DTO_MonAn GetCurMATB()
+        {
+            String maMA = dtMA.Rows[dtMA.CurrentCell.RowIndex].Cells[0].Value.ToString().Trim();
+            DTO.DTO_MonAn ma;
+            ma = BUS.BUS_DatTiecCuoi.getThongTinMonAn(maMA);
+            return ma;
+        }
+
         private void CmbDsMonAn_SelectedIndexChanged(object sender, EventArgs e)
         {
             DTO.DTO_MonAn ma = GetCurMA();            
@@ -223,20 +229,37 @@ namespace QuanLyTiecCuoi
             List<String> d = new List<String>();
             foreach(DataGridViewRow x in dtMA.Rows)
             {
-                if (x.Cells["id"].Value != null)
-                    d.Add(x.Cells["id"].Value.ToString());
+                if (x.Cells[0].Value != null)
+                    d.Add(x.Cells[0].Value.ToString().Trim());
             }
-            if (d.Contains(ma.MA_MON_AN))
+            if (d.Contains(ma.MA_MON_AN.Trim()))
             {
                 MessageBox.Show("Món ăn đã có trong bảng.");
                 return;
+
             }
-            dtMA.Rows.Add(ma.MA_MON_AN, ma.TEN_MON_AN, ma.DON_GIA, tbGhiChuMA.Text);
+            DTO.DTO_DatMonAn dma = new DTO.DTO_DatMonAn();
+            dma.MA_TIEC_CUOI = cmbMaTiecCuoi.Text;
+            dma.MA_MON_AN = ma.MA_MON_AN;
+            dma.GHI_CHU = tbGhiChuMA.Text;
+            bool state = BUS.BUS_DatTiecCuoi.themDatMonAn(dma);
+            if (!state)
+            {
+                MessageBox.Show("Lỗi thêm món ăn.");
+            }
+            HienThiDsMonAn(cmbMaTiecCuoi.Text);
+
+
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            dtMA.Rows.Remove(dtMA.CurrentRow);
+            DTO.DTO_MonAn ma = GetCurMATB();
+            DTO.DTO_DatMonAn dma = new DTO.DTO_DatMonAn();
+            dma.MA_TIEC_CUOI = cmbMaTiecCuoi.Text;
+            dma.MA_MON_AN = ma.MA_MON_AN;
+            BUS_DatTiecCuoi.xoaDatMonAn(dma);
+            HienThiDsMonAn(cmbMaTiecCuoi.Text);
         }
         private void HienThiThongTinTC(DTO.DTO_TiecCuoi tc)
         {
@@ -250,24 +273,41 @@ namespace QuanLyTiecCuoi
         private void HienThiDsMonAn(String maTC)
         {
             dtMA.DataSource = BUS_DatTiecCuoi.getDsMonAnDaDat(maTC);
+            if (dtMA.Columns.Count == 0)
+                return;
+            dtMA.Columns[0].HeaderText = "Mã Món ăn";
+            dtMA.Columns[1].HeaderText = "Tên món ăn";
+            dtMA.Columns[2].HeaderText = "Đơn giá";
+            dtMA.Columns[3].HeaderText = "Ghi chú";
+            dtMA.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dtMA.ReadOnly = true;
+            dtMA.MultiSelect = false;
         }
 
         private void HienThiDsDichVu(String maTC)
         {
-
+            dtDV.DataSource = BUS.BUS_DatTiecCuoi.getDsDichVuDaDat(maTC);
+            if (dtDV.Columns.Count == 0)
+                return;
+            dtDV.Columns[0].HeaderText = "Mã Dịch vụ";
+            dtDV.Columns[1].HeaderText = "Tên Dịch vụ";
+            dtDV.Columns[2].HeaderText = "Số Lượng";
+            dtDV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dtDV.ReadOnly = true;
+            dtDV.MultiSelect = false;
         }
 
         private void CapNhatBtt(string maTC)
         {
             if (BUS_DatTiecCuoi.getDsMaTiecCuoi().Contains(maTC))
             {
-                button1.Enabled = true;
-                button5.Enabled = true;
+                bttThemMA.Enabled = true;
+                button3.Enabled = true;
             }
             else
             {
-                button1.Enabled = false;
-                button5.Enabled = false;
+                bttThemMA.Enabled = false;
+                button3.Enabled = false;
             }
         
         }
@@ -278,6 +318,7 @@ namespace QuanLyTiecCuoi
             DTO.DTO_TiecCuoi tc = BUS_DatTiecCuoi.getThongTinTiecCuoi(maTC);
             DTO.DTO_KhachHang kh = BUS_DatTiecCuoi.getThongTinKhachHang(tc.MA_KHACH_HANG);
             cmbSanh.Text = tc.MA_SANH.Trim();
+            cmbCa.Text = tc.MA_CA.Trim();
             numSLBan.Value = tc.SL_BAN;
             numSLDuTru.Value = tc.SL_BAN_DU_TRU;
             tbDatCoc.Text = tc.TIEN_DAT_COC.ToString();
@@ -291,7 +332,7 @@ namespace QuanLyTiecCuoi
 
         private void DtMA_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            cmbDsMonAn.Text = dtMA.Rows[e.RowIndex].Cells[1].Value.ToString();
+            cmbDsMonAn.Text = dtMA.Rows[e.RowIndex].Cells[1].Value.ToString().Trim();
             lbDonGia.Text = dtMA.Rows[e.RowIndex].Cells[2].Value.ToString();
             tbGhiChuMA.Text = dtMA.Rows[e.RowIndex].Cells[3].Value.ToString();
 
@@ -363,7 +404,6 @@ namespace QuanLyTiecCuoi
             String maS = cmbSanh.Text;
             String maCa = cmbCa.Text;
             String ngayToChuc = dateTimePicker1.Value.ToString("yyyy-MM-dd"); ;
-            MessageBox.Show(ngayToChuc);
             int tienDatCoc = int.Parse(tbDatCoc.Text);
             int slBan = int.Parse(numSLBan.Value.ToString());
             int slDuTru = int.Parse(numSLDuTru.Value.ToString());
@@ -464,6 +504,42 @@ namespace QuanLyTiecCuoi
         private void NumSLDuTru_ValueChanged(object sender, EventArgs e)
         {
             TinhTienBan();
+        }
+        private DTO.DTO_DichVu GetCurDV()
+        {
+            int id = cmbDsDichVu.SelectedIndex;
+            String maDV = DsDV.Item1[id];
+            DTO.DTO_DichVu dv;
+            dv = BUS.BUS_DatTiecCuoi.getThongTinDichVu(maDV);
+            return dv;
+        }
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            if (cmbDsDichVu.SelectedIndex < 0)
+                return;
+            DTO.DTO_DichVu dv = GetCurDV();
+            List<String> d = new List<String>();
+            foreach (DataGridViewRow x in dtDV.Rows)
+            {
+                if (x.Cells[0].Value != null)
+                    d.Add(x.Cells[0].Value.ToString().Trim());
+            }
+            if (d.Contains(dv.MA_DICH_VU.Trim()))
+            {
+                MessageBox.Show("Dịch vụ đã có trong bảng.");
+                return;
+
+            }
+            DTO.DTO_DatDichVu ddv = new DTO.DTO_DatDichVu();
+            ddv.MA_TIEC_CUOI = cmbMaTiecCuoi.Text;
+            ddv.MA_DICH_VU = dv.MA_DICH_VU;
+            ddv.SO_LUONG = numericUpDown1.Text;
+            bool state = BUS.BUS_DatTiecCuoi.themDatDichVu(ddv);
+            if (!state)
+            {
+                MessageBox.Show("Lỗi thêm dịch vụ.");
+            }
+            HienThiDsDichVu(cmbMaTiecCuoi.Text);
         }
     }
 }

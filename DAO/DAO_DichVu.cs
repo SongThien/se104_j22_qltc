@@ -25,5 +25,20 @@ namespace DAO
             }
             return (null,null);
         }
+        public static DTO.DTO_DichVu getThongTinDichVu(String maDV)
+        {
+            DTO.DTO_DichVu result = null;
+            String sql = String.Format(@"SELECT * FROM DICH_VU WHERE MA_DICH_VU = '{0}'", maDV);
+            DataTable da = DatabaseHelper.GetData(sql);
+            if (da.Rows.Count > 0)
+            {
+                result = new DTO.DTO_DichVu();
+                DataRow row = da.Rows[0];
+                result.MA_DICH_VU = maDV;
+                result.TEN_DICH_VU = row["TEN_DICH_VU"].ToString();
+                result.DON_GIA = decimal.Parse(row["DON_GIA"].ToString());
+            }
+            return result;
+        }
     }
 }
