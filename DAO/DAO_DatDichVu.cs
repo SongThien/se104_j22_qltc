@@ -9,7 +9,7 @@ namespace DAO
     {
         public static DataTable getDsDichVuDaDat(String maTC)
         {
-            String sql = String.Format(@"SELECT DAT_DICH_VU.MA_DICH_VU, TEN_DICH_VU, SO_LUONG FROM DAT_DICH_VU , DICH_VU WHERE MA_TIEC_CUOI = '{0}' AND DAT_MON_AN.MA_DICH_VU = DICH_VU.MA_DICH_VU", maTC);
+            String sql = String.Format(@"SELECT DAT_DICH_VU.MA_DICH_VU, TEN_DICH_VU, DON_GIA, SO_LUONG FROM DAT_DICH_VU , DICH_VU WHERE MA_TIEC_CUOI = '{0}' AND DAT_DICH_VU.MA_DICH_VU = DICH_VU.MA_DICH_VU", maTC);
             DataTable ds;
             ds = DatabaseHelper.GetData(sql);
             return ds;

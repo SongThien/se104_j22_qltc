@@ -62,7 +62,7 @@
             this.button9 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dtMA = new System.Windows.Forms.DataGridView();
-            this.label28 = new System.Windows.Forms.Label();
+            this.lbTienAn = new System.Windows.Forms.Label();
             this.lbDonGia = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -75,7 +75,7 @@
             this.cmbDsMonAn = new System.Windows.Forms.ComboBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dtDV = new System.Windows.Forms.DataGridView();
-            this.label30 = new System.Windows.Forms.Label();
+            this.lbTienDichVu = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -249,7 +249,7 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 22;
-            this.button6.Text = "Xoà";
+            this.button6.Text = "Xoá";
             this.button6.UseVisualStyleBackColor = true;
             // 
             // cmbMaTiecCuoi
@@ -313,6 +313,7 @@
             this.cmbCa.Name = "cmbCa";
             this.cmbCa.Size = new System.Drawing.Size(89, 21);
             this.cmbCa.TabIndex = 14;
+            this.cmbCa.SelectedIndexChanged += new System.EventHandler(this.CmbCa_SelectedIndexChanged);
             // 
             // numSLBan
             // 
@@ -337,6 +338,8 @@
             this.tbDatCoc.Name = "tbDatCoc";
             this.tbDatCoc.Size = new System.Drawing.Size(121, 20);
             this.tbDatCoc.TabIndex = 10;
+            this.tbDatCoc.Text = "0";
+            this.tbDatCoc.TextChanged += new System.EventHandler(this.TbDatCoc_TextChanged);
             // 
             // label21
             // 
@@ -415,7 +418,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.dtMA);
-            this.groupBox3.Controls.Add(this.label28);
+            this.groupBox3.Controls.Add(this.lbTienAn);
             this.groupBox3.Controls.Add(this.lbDonGia);
             this.groupBox3.Controls.Add(this.label18);
             this.groupBox3.Controls.Add(this.label8);
@@ -442,14 +445,14 @@
             this.dtMA.TabIndex = 21;
             this.dtMA.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtMA_CellContentClick);
             // 
-            // label28
+            // lbTienAn
             // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(423, 224);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(13, 13);
-            this.label28.TabIndex = 20;
-            this.label28.Text = "0";
+            this.lbTienAn.AutoSize = true;
+            this.lbTienAn.Location = new System.Drawing.Point(423, 224);
+            this.lbTienAn.Name = "lbTienAn";
+            this.lbTienAn.Size = new System.Drawing.Size(13, 13);
+            this.lbTienAn.TabIndex = 20;
+            this.lbTienAn.Text = "0";
             // 
             // lbDonGia
             // 
@@ -547,7 +550,7 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.dtDV);
-            this.groupBox4.Controls.Add(this.label30);
+            this.groupBox4.Controls.Add(this.lbTienDichVu);
             this.groupBox4.Controls.Add(this.label29);
             this.groupBox4.Controls.Add(this.label10);
             this.groupBox4.Controls.Add(this.label7);
@@ -573,14 +576,14 @@
             this.dtDV.Size = new System.Drawing.Size(379, 182);
             this.dtDV.TabIndex = 23;
             // 
-            // label30
+            // lbTienDichVu
             // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(421, 248);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(13, 13);
-            this.label30.TabIndex = 22;
-            this.label30.Text = "0";
+            this.lbTienDichVu.AutoSize = true;
+            this.lbTienDichVu.Location = new System.Drawing.Point(421, 248);
+            this.lbTienDichVu.Name = "lbTienDichVu";
+            this.lbTienDichVu.Size = new System.Drawing.Size(13, 13);
+            this.lbTienDichVu.TabIndex = 22;
+            this.lbTienDichVu.Text = "0";
             // 
             // label29
             // 
@@ -635,6 +638,7 @@
             this.button4.TabIndex = 4;
             this.button4.Text = "Xoá";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.Button4_Click);
             // 
             // button3
             // 
@@ -767,9 +771,9 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.ComboBox cmbMaTiecCuoi;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label lbTienAn;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label lbTienDichVu;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.DataGridView dtMA;
         private System.Windows.Forms.DataGridView dtDV;

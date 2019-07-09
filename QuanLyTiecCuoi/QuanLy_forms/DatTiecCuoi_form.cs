@@ -282,6 +282,7 @@ namespace QuanLyTiecCuoi
             dtMA.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dtMA.ReadOnly = true;
             dtMA.MultiSelect = false;
+            TinhTienMonAn();
         }
 
         private void HienThiDsDichVu(String maTC)
@@ -291,10 +292,12 @@ namespace QuanLyTiecCuoi
                 return;
             dtDV.Columns[0].HeaderText = "Mã Dịch vụ";
             dtDV.Columns[1].HeaderText = "Tên Dịch vụ";
-            dtDV.Columns[2].HeaderText = "Số Lượng";
+            dtDV.Columns[2].HeaderText = "Đơn giá";
+            dtDV.Columns[3].HeaderText = "Số Lượng";
             dtDV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dtDV.ReadOnly = true;
             dtDV.MultiSelect = false;
+            TinhTienDichVu();
         }
 
         private void CapNhatBtt(string maTC)
@@ -327,6 +330,7 @@ namespace QuanLyTiecCuoi
             HienThiDsMonAn(maTC);
             HienThiDsDichVu(maTC);
             CapNhatBtt(maTC);
+            KiemTraSanhTrong();
 
         }
 
@@ -338,9 +342,21 @@ namespace QuanLyTiecCuoi
 
         }
 
+        private void KiemTraSanhTrong()
+        {
+            bool empty = BUS.BUS_DatTiecCuoi.kiemTraSanhTrong(cmbMaTiecCuoi.Text, cmbSanh.Text, dateTimePicker1.Value.ToString("yyyy-MM-d"), cmbCa.Text);
+            if (empty)
+            {
+                button9.Enabled = true;
+                return;
+            }
+            button9.Enabled = false;
+
+        }
+
         private void DateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-
+            KiemTraSanhTrong();
         }
 
         private void TinhTienBan()
@@ -350,11 +366,13 @@ namespace QuanLyTiecCuoi
             String maLs = BUS.BUS_DatTiecCuoi.getThongTinSanh(cmbSanh.Text).MA_LOAI_SANH;
             int dongia = BUS_DatTiecCuoi.getThongTinLoaiSanh(maLs).DON_GIA_TOI_THIEU;
             lbTienBan.Text = (dongia * numSLBan.Value).ToString() + " + " + (dongia * numSLDuTru.Value).ToString();
+            lbConlai.Text = (dongia * numSLBan.Value - int.Parse(tbDatCoc.Text)).ToString() + " + " + (dongia * numSLDuTru.Value).ToString();
         }
 
         private void CmbSanh_SelectedIndexChanged(object sender, EventArgs e)
         {
             TinhTienBan();
+            KiemTraSanhTrong();
         }
 
         private bool CheckThongTinTC()
@@ -540,6 +558,47 @@ namespace QuanLyTiecCuoi
                 MessageBox.Show("Lỗi thêm dịch vụ.");
             }
             HienThiDsDichVu(cmbMaTiecCuoi.Text);
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            String maDV = dtDV.Rows[dtDV.CurrentCell.RowIndex].Cells[0].Value.ToString().Trim();
+            DTO.DTO_DatDichVu ddv = new DTO.DTO_DatDichVu();
+            ddv.MA_TIEC_CUOI = cmbMaTiecCuoi.Text;
+            ddv.MA_DICH_VU = maDV;
+            BUS_DatTiecCuoi.xoaDatDichVu(ddv);
+            HienThiDsDichVu(cmbMaTiecCuoi.Text);
+        }
+
+        private void TbDatCoc_TextChanged(object sender, EventArgs e)
+        {
+            TinhTienBan();
+        }
+
+        private void TinhTienMonAn()
+        {
+            int sum = 0;
+            int u = BUS_DatTiecCuoi.getThongTinTiecCuoi(cmbMaTiecCuoi.Text).SL_BAN;
+            for (int i = 0; i< dtMA.Rows.Count - 1 ;i++)
+            {
+                sum += int.Parse(dtMA.Rows[i].Cells[2].Value.ToString().Trim());
+            }
+            sum *= u;
+            lbTienAn.Text = sum.ToString();
+        }
+        private void TinhTienDichVu()
+        {
+            int sum = 0;
+            for (int i = 0; i < dtDV.Rows.Count - 1; i++)
+            {
+                sum += int.Parse(dtDV.Rows[i].Cells[2].Value.ToString().Trim())* int.Parse(dtDV.Rows[i].Cells[3].Value.ToString().Trim());
+            }
+            lbTienDichVu.Text = sum.ToString();
+        }
+
+        private void CmbCa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            KiemTraSanhTrong();
         }
     }
 }

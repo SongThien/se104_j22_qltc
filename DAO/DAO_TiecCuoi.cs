@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Text;
+using System.Windows.Forms;
 
 namespace DAO
 {
@@ -62,6 +63,33 @@ namespace DAO
             String sql = String.Format(@"UPDATE KHACH_HANG SET MA_KHACH_HANG = {1}, MA_SANH = {2}, NGAY_TO_CHUC = {3}, MA_CA = {4}, TIEN_DAT_COC = {5}, SL_BAN = {6}, SL_BAN_DU_TRU = {7} WHERE MA_TIEC_CUOI='{0}' ",
                 tc.MA_TIEC_CUOI, tc.MA_KHACH_HANG, tc.MA_SANH, tc.NGAY_TO_CHUC, tc.MA_CA, tc.TIEN_DAT_COC, tc.SL_BAN, tc.SL_BAN_DU_TRU);
             if (DatabaseHelper.ExcuteSql(sql) > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+        public static DataTable getFullDsTiecCuoi()
+        {
+            String sql = @"SELECT TEN_CHU_RE, TEN_CO_DAU, SDT, TEN_SANH, NGAY_TO_CHUC, MA_CA, SL_BAN FROM KHACH_HANG, TIEC_CUOI, SANH WHERE KHACH_HANG.MA_KHACH_HANG = TIEC_CUOI.MA_KHACH_HANG AND SANH.MA_SANH = TIEC_CUOI.MA_SANH";
+            return DatabaseHelper.GetData(sql);
+        }
+
+        public static DataTable getDsTiecCuoiSapToi()
+        {
+            String now = DateTime.Today.ToString();
+            String sql = String.Format(@"SELECT TEN_CHU_RE, TEN_CO_DAU, SDT, TEN_SANH, NGAY_TO_CHUC, MA_CA, SL_BAN FROM KHACH_HANG, TIEC_CUOI, SANH WHERE KHACH_HANG.MA_KHACH_HANG = TIEC_CUOI.MA_KHACH_HANG AND SANH.MA_SANH = TIEC_CUOI.MA_SANH AND NGAY_TO_CHUC >= '{0}'", now);
+            return DatabaseHelper.GetData(sql);
+        }
+        public static DataTable getDsTiecCuoiTrongNgay(string s)
+        {
+            String sql = String.Format(@"SELECT TEN_CHU_RE, TEN_CO_DAU, SDT, TEN_SANH, NGAY_TO_CHUC, MA_CA, SL_BAN FROM KHACH_HANG, TIEC_CUOI, SANH WHERE KHACH_HANG.MA_KHACH_HANG = TIEC_CUOI.MA_KHACH_HANG AND SANH.MA_SANH = TIEC_CUOI.MA_SANH AND NGAY_TO_CHUC = '{0}'", s);
+            return DatabaseHelper.GetData(sql);
+        }
+        public static bool kiemTraSanhTrong(string matc, string sa, string ngay, string ca)
+        {
+            String sql = String.Format(@"SELECT * FROM TIEC_CUOI WHERE MA_SANH = '{0}' AND NGAY_TO_CHUC = '{1}'AND MA_CA = '{2}' AND MA_TIEC_CUOI <> '{3}'",sa,ngay,ca, matc);
+            Console.WriteLine(sql);
+            if (DatabaseHelper.GetData(sql).Rows.Count < 1)
             {
                 return true;
             }

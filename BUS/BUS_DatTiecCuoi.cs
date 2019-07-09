@@ -112,5 +112,9 @@ namespace BUS
         {
             return DAO.DAO_DichVu.getThongTinDichVu(maDV);
         }
+        public static bool kiemTraSanhTrong(string matc, string sa, string ngay, string ca)
+        {
+            return DAO.DAO_TiecCuoi.kiemTraSanhTrong(matc, sa, ngay, ca);
+        }
     }
 }

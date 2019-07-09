@@ -25,7 +25,7 @@ namespace QuanLyTiecCuoi.QuanLy_forms
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            
+            dtTC.DataSource = BUS.BUS_DSTiecCuoi.getFullDsTiecCuoi();
         }
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -35,7 +35,12 @@ namespace QuanLyTiecCuoi.QuanLy_forms
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            //ss
+            dtTC.DataSource = BUS.BUS_DSTiecCuoi.getDsTiecCuoiSapToi();
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            dtTC.DataSource = BUS.BUS_DSTiecCuoi.getDsTiecCuoiTrongNgay(dateTimePicker1.Value.ToString("yyyy-MMM-d"));
         }
     }
 }
