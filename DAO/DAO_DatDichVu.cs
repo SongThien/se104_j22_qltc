@@ -36,5 +36,15 @@ namespace DAO
             }
             return false;
         }
+        public static bool xoaDatDichVu(string maTC)
+        {
+            String sql = String.Format(@"DELETE FROM DAT_DICH_VU WHERE MA_TIEC_CUOI = '{0}'",maTC);
+            Console.WriteLine(sql);
+            if (DatabaseHelper.ExcuteSql(sql) > 0)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

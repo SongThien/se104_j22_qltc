@@ -60,7 +60,7 @@ namespace DAO
         }
         public static bool capNhatThongTinTiecCuoi(DTO.DTO_TiecCuoi tc)
         {
-            String sql = String.Format(@"UPDATE KHACH_HANG SET MA_KHACH_HANG = {1}, MA_SANH = {2}, NGAY_TO_CHUC = {3}, MA_CA = {4}, TIEN_DAT_COC = {5}, SL_BAN = {6}, SL_BAN_DU_TRU = {7} WHERE MA_TIEC_CUOI='{0}' ",
+            String sql = String.Format(@"UPDATE TIEC_CUOI SET MA_KHACH_HANG = '{1}', MA_SANH = '{2}', NGAY_TO_CHUC = '{3}', MA_CA = '{4}', TIEN_DAT_COC = {5}, SL_BAN = {6}, SL_BAN_DU_TRU = {7} WHERE MA_TIEC_CUOI='{0}' ",
                 tc.MA_TIEC_CUOI, tc.MA_KHACH_HANG, tc.MA_SANH, tc.NGAY_TO_CHUC, tc.MA_CA, tc.TIEN_DAT_COC, tc.SL_BAN, tc.SL_BAN_DU_TRU);
             if (DatabaseHelper.ExcuteSql(sql) > 0)
             {
@@ -90,6 +90,50 @@ namespace DAO
             String sql = String.Format(@"SELECT * FROM TIEC_CUOI WHERE MA_SANH = '{0}' AND NGAY_TO_CHUC = '{1}'AND MA_CA = '{2}' AND MA_TIEC_CUOI <> '{3}'",sa,ngay,ca, matc);
             Console.WriteLine(sql);
             if (DatabaseHelper.GetData(sql).Rows.Count < 1)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public static String[] getDsMaTiecCuoiChuaThanhToan()
+        {
+            String sql = @"SELECT MA_TIEC_CUOI FROM TIEC_CUOI WHERE MA_TIEC_CUOI NOT IN (SELECT MA_TIEC_CUOI FROM HOA_DON_THANH_TOAN)";
+            DataTable ds = DatabaseHelper.GetData(sql);
+            List<String> result = new List<String>();
+            if (ds != null)
+            {
+                foreach (DataRow row in ds.Rows)
+                {
+                    result.Add(row[0].ToString().Trim());
+                }
+
+                return result.ToArray();
+            }
+            return null;
+        }
+
+        public static String[] getDsMaTiecCuoiDaThanhToan()
+        {
+            String sql = @"SELECT MA_TIEC_CUOI FROM TIEC_CUOI WHERE MA_TIEC_CUOI IN (SELECT MA_TIEC_CUOI FROM HOA_DON_THANH_TOAN)";
+            DataTable ds = DatabaseHelper.GetData(sql);
+            List<String> result = new List<String>();
+            if (ds != null)
+            {
+                foreach (DataRow row in ds.Rows)
+                {
+                    result.Add(row[0].ToString().Trim());
+                }
+
+                return result.ToArray();
+            }
+            return null;
+        }
+        public static bool xoaTiecCuoi(string maTC)
+        {
+            String sql = String.Format(@"DELETE FROM TIEC_CUOI WHERE MA_TIEC_CUOI = '{0}'", maTC);
+            Console.WriteLine(sql);
+            if (DatabaseHelper.ExcuteSql(sql) > 0)
             {
                 return true;
             }

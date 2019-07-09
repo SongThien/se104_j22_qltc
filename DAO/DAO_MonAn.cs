@@ -41,5 +41,57 @@ namespace DAO
             }
             return result;
         }
+        public static DataTable getDsMonAn()
+        {
+            String sql = @"SELECT * FROM MON_AN";
+            return DatabaseHelper.GetData(sql);
+        }
+
+        public static String[] getDsMaMonAn()
+        {
+            String sql = @"SELECT MA_MON_AN FROM MON_AN";
+            DataTable ds = DatabaseHelper.GetData(sql);
+            List<String> result = new List<String>();
+            if (ds != null)
+            {
+                foreach (DataRow row in ds.Rows)
+                {
+                    result.Add(row[0].ToString().Trim());
+                }
+
+                return result.ToArray();
+            }
+            return null;
+        }
+        public static bool themMonAn(DTO.DTO_MonAn dv)
+        {
+            string sTruyVan = string.Format(@"INSERT INTO MON_AN(MA_MON_AN, TEN_MON_AN, DON_GIA) values ('{0}','{1}',{2})", dv.MA_MON_AN, dv.TEN_MON_AN, dv.DON_GIA);
+            Console.WriteLine(sTruyVan);
+            if (DatabaseHelper.ExcuteSql(sTruyVan) > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+        public static bool suaMonAn(DTO.DTO_MonAn dv)
+        {
+            string sTruyVan = string.Format(@"UPDATE MON_AN SET TEN_MON_AN='{1}', DON_GIA='{2}' where MA_MON_AN = '{0}'", dv.MA_MON_AN, dv.TEN_MON_AN, dv.DON_GIA);
+            Console.WriteLine(sTruyVan);
+            if (DatabaseHelper.ExcuteSql(sTruyVan) > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+        public static bool xoaMonAn(DTO.DTO_MonAn dv)
+        {
+            string sTruyVan = string.Format(@"delete from MON_AN where MA_MON_AN = '{0}'", dv.MA_MON_AN);
+            if (DatabaseHelper.ExcuteSql(sTruyVan) > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
     }
 }

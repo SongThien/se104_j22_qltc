@@ -134,7 +134,7 @@
             this.bttThemKH.Name = "bttThemKH";
             this.bttThemKH.Size = new System.Drawing.Size(89, 23);
             this.bttThemKH.TabIndex = 23;
-            this.bttThemKH.Text = "Thêm";
+            this.bttThemKH.Text = "Tạo mới";
             this.bttThemKH.UseVisualStyleBackColor = true;
             this.bttThemKH.Click += new System.EventHandler(this.Button7_Click);
             // 
@@ -239,7 +239,7 @@
             this.bttThemDT.Name = "bttThemDT";
             this.bttThemDT.Size = new System.Drawing.Size(75, 23);
             this.bttThemDT.TabIndex = 23;
-            this.bttThemDT.Text = "Thêm";
+            this.bttThemDT.Text = "Tạo mới";
             this.bttThemDT.UseVisualStyleBackColor = true;
             this.bttThemDT.Click += new System.EventHandler(this.BttThemDT_Click);
             // 
@@ -251,6 +251,7 @@
             this.button6.TabIndex = 22;
             this.button6.Text = "Xoá";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.Button6_Click);
             // 
             // cmbMaTiecCuoi
             // 

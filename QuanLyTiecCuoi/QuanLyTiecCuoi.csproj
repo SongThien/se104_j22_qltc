@@ -52,6 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="main_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="main_form.Designer.cs">
+      <DependentUpon>main_form.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLy_forms\DatTiecCuoi_form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +76,24 @@
     <Compile Include="QuanLy_forms\LapHoaDon_form.Designer.cs">
       <DependentUpon>LapHoaDon_form.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLy_forms\ThemCa_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLy_forms\ThemCa_form.Designer.cs">
+      <DependentUpon>ThemCa_form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLy_forms\ThemDichVu_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLy_forms\ThemDichVu_Form.Designer.cs">
+      <DependentUpon>ThemDichVu_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLy_forms\themMonAn_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLy_forms\themMonAn_form.Designer.cs">
+      <DependentUpon>themMonAn_form.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLy_forms\TiepNhanSanh_form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +102,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="main_form.resx">
+      <DependentUpon>main_form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuanLy_forms\DatTiecCuoi_form.resx">
       <DependentUpon>DatTiecCuoi_form.cs</DependentUpon>
     </EmbeddedResource>
@@ -86,6 +113,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLy_forms\LapHoaDon_form.resx">
       <DependentUpon>LapHoaDon_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLy_forms\ThemCa_form.resx">
+      <DependentUpon>ThemCa_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLy_forms\ThemDichVu_Form.resx">
+      <DependentUpon>ThemDichVu_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLy_forms\themMonAn_form.resx">
+      <DependentUpon>themMonAn_form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLy_forms\TiepNhanSanh_form.resx">
       <DependentUpon>TiepNhanSanh_form.cs</DependentUpon>
@@ -99,7 +135,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
