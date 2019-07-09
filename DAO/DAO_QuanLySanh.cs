@@ -28,7 +28,16 @@ namespace DAO
         }
         public static bool suaSanh(DTO.DTO_Sanh s)
         {
-            string sTruyVan = string.Format(@"UPDATE SANH SET TEN_SANH='{1}', MA_LOAI_SANH='{2}', SO_LUONG_BAN='{3}' where MA_SANH = '{0}'", s.MA_SANH, s.TEN_SANH, s.MA_LOAI_SANH, s.SO_LUONG_BAN);
+            string sTruyVan = string.Format(@"UPDATE SANH SET TEN_SANH='{1}', MA_LOAI_SANH='{2}', SO_LUONG_BAN='{3}',GHI_CHU='{4}' where MA_SANH = '{0}'", s.MA_SANH, s.TEN_SANH, s.MA_LOAI_SANH, s.SO_LUONG_BAN,s.GHI_CHU);
+            if (DatabaseHelper.ExcuteSql(sTruyVan) > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+        public static bool xoaSanh(DTO.DTO_Sanh s)
+        {
+            string sTruyVan = string.Format(@"delete from SANH where MA_SANH = '{0}'", s.MA_SANH);
             if (DatabaseHelper.ExcuteSql(sTruyVan) > 0)
             {
                 return true;

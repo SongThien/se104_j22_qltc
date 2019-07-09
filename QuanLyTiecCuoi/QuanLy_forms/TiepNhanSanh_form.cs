@@ -228,7 +228,7 @@ namespace QuanLyTiecCuoi
                 ClearInputs();
                 return;
             }
-            MessageBox.Show("Sửa That Bai!", "Thông Báo!");
+            MessageBox.Show("Sửa Thất Bại!", "Thông Báo!");
         }
 
         private void BtnXoaloai_Click(object sender, EventArgs e)
@@ -250,7 +250,7 @@ namespace QuanLyTiecCuoi
                 ClearInputs();
                 return;
             }
-            MessageBox.Show("Xóa That Bai!", "Thông Báo!");
+            MessageBox.Show("Xóa Thất Bại!", "Thông Báo!");
         }
 
         private void BtnSuaSanh_Click(object sender, EventArgs e)
@@ -268,15 +268,36 @@ namespace QuanLyTiecCuoi
             s.SO_LUONG_BAN = int.Parse(soLuongban.Value.ToString());
             if (BUS_TiepNhanSanh.suaSanh(s) == true)
             {
-                MessageBox.Show("Sua Thành  Công!", "Thông Báo!");
+                MessageBox.Show("Sửa Thành  Công!", "Thông Báo!");
                 LoadDataGridView();
                 loadLoaiSanh();
                 LoadDataGridViewLoaiSanh();
                 ClearInputs();
                 return;
             }
-            MessageBox.Show("Sua That Bai!", "Thông Báo!");
+            MessageBox.Show("Sửa Thất Bại!", "Thông Báo!");
         }
 
+        private void BtnXoaSanh_Click(object sender, EventArgs e)
+        {
+            String MaS = DgvDanhSachSanh.CurrentRow.Cells[0].Value.ToString();
+            if (MaS == "")
+            {
+                MessageBox.Show("Vui Lòng Chọn Sảnh Cần Xóa!", "Thông Báo!");
+                return;
+            }
+            DTO.DTO_Sanh s = new DTO.DTO_Sanh();
+            s.MA_SANH = MaS;
+            if (BUS_TiepNhanSanh.xoaSanh(s) == true)
+            {
+                MessageBox.Show("Xóa Thành Công!", "Thông Báo!");
+                LoadDataGridView();
+                loadLoaiSanh();
+                LoadDataGridViewLoaiSanh();
+                ClearInputs();
+                return;
+            }
+            MessageBox.Show("Xóa Thất Bại!", "Thông Báo!");
+        }
     }
 }
