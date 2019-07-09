@@ -40,3 +40,5 @@ C:\Users\lamlee\Desktop\se104_j22_qltc\QuanLyTiecCuoi\obj\Debug\QuanLyTiecCuoi.c
 C:\Users\lamlee\Desktop\se104_j22_qltc\QuanLyTiecCuoi\obj\Debug\QuanLyTiecCuoi.csproj.CopyComplete
 C:\Users\lamlee\Desktop\se104_j22_qltc\QuanLyTiecCuoi\obj\Debug\QuanLyTiecCuoi.exe
 C:\Users\lamlee\Desktop\se104_j22_qltc\QuanLyTiecCuoi\obj\Debug\QuanLyTiecCuoi.pdb
+C:\Users\lamlee\Desktop\se104_j22_qltc\QuanLyTiecCuoi\obj\Debug\QuanLyTiecCuoi.QuanLy_forms.ThemCa_form.resources
+C:\Users\lamlee\Desktop\se104_j22_qltc\QuanLyTiecCuoi\obj\Debug\QuanLyTiecCuoi.QuanLy_forms.ThemDichVu_Form.resources

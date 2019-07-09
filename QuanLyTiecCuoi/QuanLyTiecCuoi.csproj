@@ -64,11 +64,29 @@
     <Compile Include="QuanLy_forms\DanhSachTiecCuoi_form.Designer.cs">
       <DependentUpon>DanhSachTiecCuoi_form.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLy_forms\LapHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLy_forms\LapHoaDon.Designer.cs">
+      <DependentUpon>LapHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLy_forms\LapHoaDon_form.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="QuanLy_forms\LapHoaDon_form.Designer.cs">
       <DependentUpon>LapHoaDon_form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLy_forms\ThemCa_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLy_forms\ThemCa_form.Designer.cs">
+      <DependentUpon>ThemCa_form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLy_forms\ThemDichVu_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLy_forms\ThemDichVu_Form.Designer.cs">
+      <DependentUpon>ThemDichVu_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="QuanLy_forms\TiepNhanSanh_form.cs">
       <SubType>Form</SubType>
@@ -87,6 +105,12 @@
     <EmbeddedResource Include="QuanLy_forms\LapHoaDon_form.resx">
       <DependentUpon>LapHoaDon_form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QuanLy_forms\ThemCa_form.resx">
+      <DependentUpon>ThemCa_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLy_forms\ThemDichVu_Form.resx">
+      <DependentUpon>ThemDichVu_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuanLy_forms\TiepNhanSanh_form.resx">
       <DependentUpon>TiepNhanSanh_form.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,7 +123,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

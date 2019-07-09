@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MSI GAMING\\Documents\\GitHub\\se104_j22_qltc\\DTO\\DTO.csproj": {}
+    "C:\\Users\\lamlee\\Desktop\\se104_j22_qltc\\DTO\\DTO.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MSI GAMING\\Documents\\GitHub\\se104_j22_qltc\\DTO\\DTO.csproj": {
+    "C:\\Users\\lamlee\\Desktop\\se104_j22_qltc\\DTO\\DTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MSI GAMING\\Documents\\GitHub\\se104_j22_qltc\\DTO\\DTO.csproj",
+        "projectUniqueName": "C:\\Users\\lamlee\\Desktop\\se104_j22_qltc\\DTO\\DTO.csproj",
         "projectName": "DTO",
-        "projectPath": "C:\\Users\\MSI GAMING\\Documents\\GitHub\\se104_j22_qltc\\DTO\\DTO.csproj",
-        "packagesPath": "C:\\Users\\MSI GAMING\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MSI GAMING\\Documents\\GitHub\\se104_j22_qltc\\DTO\\obj\\",
+        "projectPath": "C:\\Users\\lamlee\\Desktop\\se104_j22_qltc\\DTO\\DTO.csproj",
+        "packagesPath": "C:\\Users\\lamlee\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lamlee\\Desktop\\se104_j22_qltc\\DTO\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\MSI GAMING\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lamlee\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
