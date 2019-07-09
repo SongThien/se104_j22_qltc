@@ -36,7 +36,7 @@ namespace DAO
                 DataRow row = da.Rows[0];
                 result.MA_DICH_VU = maDV;
                 result.TEN_DICH_VU = row["TEN_DICH_VU"].ToString();
-                result.DON_GIA = decimal.Parse(row["DON_GIA"].ToString());
+                result.DON_GIA = int.Parse(row["DON_GIA"].ToString());
             }
             return result;
         }
