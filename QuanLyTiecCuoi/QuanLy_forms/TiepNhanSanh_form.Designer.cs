@@ -249,6 +249,7 @@
             // 
             // LoaiSanh
             // 
+            this.LoaiSanh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.LoaiSanh.FormattingEnabled = true;
             this.LoaiSanh.Location = new System.Drawing.Point(127, 70);
             this.LoaiSanh.Name = "LoaiSanh";

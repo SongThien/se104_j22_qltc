@@ -8,9 +8,9 @@ namespace BUS
 {
     public static class BUS_DatTiecCuoi
     {
-        public static String[] getDanhSachKhachHang()
+        public static String[] getDanhSachMaKhachHang()
         {
-            return DAO.DAO_KhachHang.getDanhSachKhachHang();
+            return DAO.DAO_KhachHang.getDanhSachMaKhachHang();
         }
         public static DTO_KhachHang getThongTinKhachHang(String maKH)
         {
@@ -88,6 +88,24 @@ namespace BUS
         public static bool xoaDatDichVu(DTO_DatDichVu ddv)
         {
             return DAO.DAO_DatDichVu.xoaDatDichVu(ddv);
+        }
+        public static DTO.DTO_LoaiSanh getThongTinLoaiSanh(string maLS)
+        {
+            return DAO.DAO_QuanLyLoaiSanh.getThongTinLoaiSanh(maLS);
+        }
+        public static String[] getDanhSachMaLoaiSanh()
+        {
+            return DAO.DAO_TiepNhanSanh.getDanhSachLoaiSanh();
+        }
+
+        public static String[] getDanhSachMaCa()
+        {
+            return DAO.DAO_Ca.getDanhSachMaCa();
+        }
+
+        public static String[] getDanhSachMaSanh()
+        {
+            return DAO.DAO_TiepNhanSanh.getDanhSachSanh();
         }
     }
 }

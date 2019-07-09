@@ -40,12 +40,11 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button9 = new System.Windows.Forms.Button();
             this.bttThemDT = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.cmbMaTiecCuoi = new System.Windows.Forms.ComboBox();
             this.label31 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
+            this.lbConlai = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.numSLDuTru = new System.Windows.Forms.NumericUpDown();
             this.label24 = new System.Windows.Forms.Label();
@@ -57,9 +56,10 @@
             this.label20 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label19 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
+            this.lbTienBan = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.cmbSanh = new System.Windows.Forms.ComboBox();
+            this.button9 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dtMA = new System.Windows.Forms.DataGridView();
             this.label28 = new System.Windows.Forms.Label();
@@ -87,8 +87,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cmbDsDichVu = new System.Windows.Forms.ComboBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numSLDuTru)).BeginInit();
@@ -212,7 +212,7 @@
             this.groupBox2.Controls.Add(this.button6);
             this.groupBox2.Controls.Add(this.cmbMaTiecCuoi);
             this.groupBox2.Controls.Add(this.label31);
-            this.groupBox2.Controls.Add(this.label26);
+            this.groupBox2.Controls.Add(this.lbConlai);
             this.groupBox2.Controls.Add(this.label25);
             this.groupBox2.Controls.Add(this.numSLDuTru);
             this.groupBox2.Controls.Add(this.label24);
@@ -224,7 +224,7 @@
             this.groupBox2.Controls.Add(this.label20);
             this.groupBox2.Controls.Add(this.dateTimePicker1);
             this.groupBox2.Controls.Add(this.label19);
-            this.groupBox2.Controls.Add(this.label17);
+            this.groupBox2.Controls.Add(this.lbTienBan);
             this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.Controls.Add(this.cmbSanh);
             this.groupBox2.Location = new System.Drawing.Point(42, 243);
@@ -235,16 +235,6 @@
             this.groupBox2.Text = "Đặt tiệc";
             this.groupBox2.Enter += new System.EventHandler(this.GroupBox2_Enter);
             // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(18, 40);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(155, 55);
-            this.button9.TabIndex = 24;
-            this.button9.Text = "Đặt tiệc  / Cập nhật";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.Button9_Click);
-            // 
             // bttThemDT
             // 
             this.bttThemDT.Location = new System.Drawing.Point(257, 13);
@@ -253,6 +243,7 @@
             this.bttThemDT.TabIndex = 23;
             this.bttThemDT.Text = "Thêm";
             this.bttThemDT.UseVisualStyleBackColor = true;
+            this.bttThemDT.Click += new System.EventHandler(this.BttThemDT_Click);
             // 
             // button6
             // 
@@ -281,14 +272,14 @@
             this.label31.TabIndex = 19;
             this.label31.Text = "Mã tiệc cưới";
             // 
-            // label26
+            // lbConlai
             // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(98, 239);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(13, 13);
-            this.label26.TabIndex = 18;
-            this.label26.Text = "0";
+            this.lbConlai.AutoSize = true;
+            this.lbConlai.Location = new System.Drawing.Point(98, 239);
+            this.lbConlai.Name = "lbConlai";
+            this.lbConlai.Size = new System.Drawing.Size(13, 13);
+            this.lbConlai.TabIndex = 18;
+            this.lbConlai.Text = "0";
             // 
             // label25
             // 
@@ -305,6 +296,7 @@
             this.numSLDuTru.Name = "numSLDuTru";
             this.numSLDuTru.Size = new System.Drawing.Size(89, 20);
             this.numSLDuTru.TabIndex = 16;
+            this.numSLDuTru.ValueChanged += new System.EventHandler(this.NumSLDuTru_ValueChanged);
             // 
             // label24
             // 
@@ -317,6 +309,7 @@
             // 
             // cmbCa
             // 
+            this.cmbCa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCa.FormattingEnabled = true;
             this.cmbCa.Location = new System.Drawing.Point(323, 53);
             this.cmbCa.Name = "cmbCa";
@@ -329,6 +322,7 @@
             this.numSLBan.Name = "numSLBan";
             this.numSLBan.Size = new System.Drawing.Size(89, 20);
             this.numSLBan.TabIndex = 12;
+            this.numSLBan.ValueChanged += new System.EventHandler(this.NumSLBan_ValueChanged);
             // 
             // label22
             // 
@@ -382,14 +376,14 @@
             this.label19.TabIndex = 6;
             this.label19.Text = "Sảnh:";
             // 
-            // label17
+            // lbTienBan
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(98, 168);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(13, 13);
-            this.label17.TabIndex = 4;
-            this.label17.Text = "0";
+            this.lbTienBan.AutoSize = true;
+            this.lbTienBan.Location = new System.Drawing.Point(98, 168);
+            this.lbTienBan.Name = "lbTienBan";
+            this.lbTienBan.Size = new System.Drawing.Size(13, 13);
+            this.lbTienBan.TabIndex = 4;
+            this.lbTienBan.Text = "0";
             // 
             // label16
             // 
@@ -402,12 +396,23 @@
             // 
             // cmbSanh
             // 
+            this.cmbSanh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSanh.FormattingEnabled = true;
             this.cmbSanh.Location = new System.Drawing.Point(101, 91);
             this.cmbSanh.Name = "cmbSanh";
             this.cmbSanh.Size = new System.Drawing.Size(121, 21);
             this.cmbSanh.TabIndex = 2;
             this.cmbSanh.SelectedIndexChanged += new System.EventHandler(this.CmbSanh_SelectedIndexChanged);
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(18, 40);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(155, 55);
+            this.button9.TabIndex = 24;
+            this.button9.Text = "Đặt tiệc  / Cập nhật";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.Button9_Click);
             // 
             // groupBox3
             // 
@@ -532,6 +537,7 @@
             // 
             // cmbDsMonAn
             // 
+            this.cmbDsMonAn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDsMonAn.FormattingEnabled = true;
             this.cmbDsMonAn.Location = new System.Drawing.Point(23, 35);
             this.cmbDsMonAn.Name = "cmbDsMonAn";
@@ -658,6 +664,7 @@
             // 
             // cmbDsDichVu
             // 
+            this.cmbDsDichVu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDsDichVu.FormattingEnabled = true;
             this.cmbDsDichVu.Location = new System.Drawing.Point(23, 41);
             this.cmbDsDichVu.Name = "cmbDsDichVu";
@@ -676,8 +683,19 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Thao tác";
             // 
+            // button5
+            // 
+            this.button5.Enabled = false;
+            this.button5.Location = new System.Drawing.Point(235, 110);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(155, 55);
+            this.button5.TabIndex = 26;
+            this.button5.Text = "Cập nhật danh sách dịch vụ";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
             // button1
             // 
+            this.button1.Enabled = false;
             this.button1.Location = new System.Drawing.Point(235, 40);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(155, 55);
@@ -685,15 +703,6 @@
             this.button1.Text = "Cập nhật danh sách món ăn";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(235, 110);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(155, 55);
-            this.button5.TabIndex = 26;
-            this.button5.Text = "Cập nhật danh sách dịch vụ";
-            this.button5.UseVisualStyleBackColor = true;
             // 
             // DatTiecCuoi_form
             // 
@@ -737,7 +746,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label lbConlai;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.NumericUpDown numSLDuTru;
         private System.Windows.Forms.Label label24;
@@ -749,7 +758,7 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lbTienBan;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ComboBox cmbSanh;
         private System.Windows.Forms.GroupBox groupBox3;

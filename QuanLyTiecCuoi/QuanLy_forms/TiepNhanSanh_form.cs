@@ -18,13 +18,16 @@ namespace QuanLyTiecCuoi
         public TiepNhanSanh_form()
         {
             InitializeComponent();
-            LoadDataGridView();
-            LoadDataGridViewLoaiSanh();
-            loadLoaiSanh();
         }
         public void LoadDataGridView()
         {
+            /*DgvDanhSachSanh.Columns.Add("id", "Mã Sảnh");
+            DgvDanhSachSanh.Columns.Add("name", "Tên Sảnh");
+            DgvDanhSachSanh.Columns.Add("mls", "Mã Loại Sảnh");
+            DgvDanhSachSanh.Columns.Add("sl", "Số lượng bàn");*/
             DgvDanhSachSanh.DataSource = BUS_TiepNhanSanh.GetDataSanhTable();
+            if (DgvDanhSachSanh.Columns.Count < 0)
+                return;
             DgvDanhSachSanh.Columns[0].HeaderText = "Mã Sảnh";
             DgvDanhSachSanh.Columns[1].HeaderText = "Tên Sảnh";
             DgvDanhSachSanh.Columns[2].HeaderText = "Mã Loại Sảnh";
@@ -37,7 +40,12 @@ namespace QuanLyTiecCuoi
 
         public void LoadDataGridViewLoaiSanh()
         {
+           /* DgvLoaiSanh.Columns.Add("id", "Mã Loại Sảnh");
+            DgvLoaiSanh.Columns.Add("name", "Tên Loại Sảnh");
+            DgvLoaiSanh.Columns.Add("price", "Đơn giá");*/
             DgvLoaiSanh.DataSource = BUS_TiepNhanSanh.GetLoaiSanhTable();
+            if (DgvDanhSachSanh.Columns.Count < 0)
+                return;
             DgvLoaiSanh.Columns[0].HeaderText = "Ma Loai Sanh";
             DgvLoaiSanh.Columns[1].HeaderText = "Ten Loai Sanh";
             DgvLoaiSanh.Columns[2].HeaderText = "Don Gia";
@@ -58,6 +66,7 @@ namespace QuanLyTiecCuoi
         private void loadLoaiSanh()
         {
             String[] s;
+            LoaiSanh.Items.Clear();
             s = BUS.BUS_TiepNhanSanh.getDanhSachLoaiSanh();
             if (s != null)
             {
@@ -66,7 +75,9 @@ namespace QuanLyTiecCuoi
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            LoadDataGridView();
+            LoadDataGridViewLoaiSanh();
+            loadLoaiSanh();
         }
 
         private void GroupBox1_Enter(object sender, EventArgs e)
@@ -122,15 +133,16 @@ namespace QuanLyTiecCuoi
             soLuongban.Value = Decimal.Parse(drs.Cells[3].Value.ToString()); 
             
         }
-        private int s = 0;
-        private String GetNewMaS(bool neww = false)
+        private String GetNewMaS()
         {
-            if (neww)
+            int bonus = 0;
+            string ma = String.Format("MS{0}", BUS_TiepNhanSanh.getDanhSachSanh().Length + 1 + bonus);
+            while (BUS_TiepNhanSanh.getDanhSachSanh().Contains(ma))
             {
-                s++;
-                return String.Format("MS{0}", BUS_TiepNhanSanh.getDanhSachSanh().Length + 1 + bonus);
+                bonus++;
+                ma = String.Format("MS{0}", BUS_TiepNhanSanh.getDanhSachSanh().Length + 1 + bonus);
             }
-            return String.Format("MS{0}", BUS_TiepNhanSanh.getDanhSachSanh().Length + 1);
+            return ma;
         }
         private void Button4_Click(object sender, EventArgs e)
         {
@@ -169,15 +181,16 @@ namespace QuanLyTiecCuoi
         {
             lbDonGia.Text = BUS_TiepNhanSanh.getThongTinLoaiSanh(LoaiSanh.Text).DON_GIA_TOI_THIEU.ToString();
         }
-        private int bonus = 0;
-        private String GetNewMaLS(bool neww = false)
+        private String GetNewMaLS()
         {
-            if (neww)
+            int bonus = 0;
+            string ma = String.Format("LS{0}", BUS_TiepNhanSanh.getDanhSachLoaiSanh().Length + 1 + bonus);
+            while (BUS_TiepNhanSanh.getDanhSachLoaiSanh().Contains(ma))
             {
                 bonus++;
-                return String.Format("MLS{0}", BUS_TiepNhanSanh.getDanhSachLoaiSanh().Length + 1 + bonus);
+                ma = String.Format("LS{0}", BUS_TiepNhanSanh.getDanhSachLoaiSanh().Length + 1 + bonus);
             }
-            return String.Format("MLS{0}", BUS_TiepNhanSanh.getDanhSachLoaiSanh().Length + 1);
+            return ma;
         }
         private void Button1_Click(object sender, EventArgs e)
         {

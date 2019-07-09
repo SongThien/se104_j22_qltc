@@ -13,7 +13,6 @@ namespace QuanLyTiecCuoi
 {
     public partial class DatTiecCuoi_form : Form
     {
-        private int bonus;
         private (String[], String[]) DsDV;
         private (String[], String[]) DsMA;
         public DatTiecCuoi_form()
@@ -28,7 +27,7 @@ namespace QuanLyTiecCuoi
 
         private void LoadKhachHang()
         {
-            String[] s = BUS.BUS_DatTiecCuoi.getDanhSachKhachHang();
+            String[] s = BUS.BUS_DatTiecCuoi.getDanhSachMaKhachHang();
             if (s != null)
             {
                 cmbMaKH.Items.AddRange(s);
@@ -73,8 +72,9 @@ namespace QuanLyTiecCuoi
         }
         private void LoadDsTiecCuoi()
         {
-            String[] s = BUS_DatTiecCuoi.getDsMaTiecCuoi();
-            cmbMaTiecCuoi.Items.AddRange(s);
+            cmbMaTiecCuoi.Items.AddRange(BUS_DatTiecCuoi.getDsMaTiecCuoi());
+            cmbSanh.Items.AddRange(BUS_DatTiecCuoi.getDanhSachMaSanh());
+            cmbCa.Items.AddRange(BUS_DatTiecCuoi.getDanhSachMaCa());
 
         }
 
@@ -93,14 +93,16 @@ namespace QuanLyTiecCuoi
             LoadDTDichVu();
         }
         
-        private String GetNewMaKH(bool neww=false)
+        private String GetNewMaKH()
         {
-            if (neww)
+            int bonus = 0;
+            string ma = String.Format("KH{0}", BUS_DatTiecCuoi.getDanhSachMaKhachHang().Length + 1 + bonus);
+            while (BUS_DatTiecCuoi.getDanhSachMaKhachHang().Contains(ma))
             {
-                bonus ++;
-                return String.Format("KH{0}", BUS_DatTiecCuoi.getDanhSachKhachHang().Length + 1 + bonus);
+                bonus++;
+                ma = String.Format("KH{0}", BUS_DatTiecCuoi.getDanhSachMaKhachHang().Length + 1 + bonus);
             }
-            return String.Format("KH{0}", BUS_DatTiecCuoi.getDanhSachKhachHang().Length + 1);
+            return ma;
         }
 
         private void ClearKHField()
@@ -112,14 +114,7 @@ namespace QuanLyTiecCuoi
 
         private void Button7_Click(object sender, EventArgs e)
         {
-            String maKH;
-            maKH = GetNewMaKH();
-            while (BUS_DatTiecCuoi.getDanhSachKhachHang().Contains(maKH))
-            {
-                maKH = GetNewMaKH(true);
-            }
-            bonus = 0;
-            cmbMaKH.Text = maKH;
+            cmbMaKH.Text = GetNewMaKH();
             ClearKHField();
         }
 
@@ -170,7 +165,7 @@ namespace QuanLyTiecCuoi
             String tenCoDau = tbTenCodau.Text;
             String sdt = tbSDT.Text;
             DTO.DTO_KhachHang newkh = new DTO.DTO_KhachHang(maKH, tenChure, tenCoDau, sdt);
-            if (BUS_DatTiecCuoi.getDanhSachKhachHang().Contains(maKH))
+            if (BUS_DatTiecCuoi.getDanhSachMaKhachHang().Contains(maKH))
             {
                 bool state = BUS_DatTiecCuoi.capNhatThongTinKH(newkh);
                 if (!state)
@@ -262,13 +257,27 @@ namespace QuanLyTiecCuoi
 
         }
 
+        private void CapNhatBtt(string maTC)
+        {
+            if (BUS_DatTiecCuoi.getDsMaTiecCuoi().Contains(maTC))
+            {
+                button1.Enabled = true;
+                button5.Enabled = true;
+            }
+            else
+            {
+                button1.Enabled = false;
+                button5.Enabled = false;
+            }
+        
+        }
+
         private void CmbMaTiecCuoi_SelectedIndexChanged(object sender, EventArgs e)
         {
             String maTC = cmbMaTiecCuoi.Text;
             DTO.DTO_TiecCuoi tc = BUS_DatTiecCuoi.getThongTinTiecCuoi(maTC);
             DTO.DTO_KhachHang kh = BUS_DatTiecCuoi.getThongTinKhachHang(tc.MA_KHACH_HANG);
-            DTO.DTO_Sanh s = BUS_DatTiecCuoi.getThongTinSanh(tc.MA_SANH);
-            cmbSanh.Text = s.MA_LOAI_SANH;
+            cmbSanh.Text = tc.MA_SANH.Trim();
             numSLBan.Value = tc.SL_BAN;
             numSLDuTru.Value = tc.SL_BAN_DU_TRU;
             tbDatCoc.Text = tc.TIEN_DAT_COC.ToString();
@@ -276,6 +285,7 @@ namespace QuanLyTiecCuoi
             HienThiThongTinTC(tc);
             HienThiDsMonAn(maTC);
             HienThiDsDichVu(maTC);
+            CapNhatBtt(maTC);
 
         }
 
@@ -292,9 +302,18 @@ namespace QuanLyTiecCuoi
 
         }
 
+        private void TinhTienBan()
+        {
+            if (cmbSanh.Text == "")
+                return;
+            String maLs = BUS.BUS_DatTiecCuoi.getThongTinSanh(cmbSanh.Text).MA_LOAI_SANH;
+            int dongia = BUS_DatTiecCuoi.getThongTinLoaiSanh(maLs).DON_GIA_TOI_THIEU;
+            lbTienBan.Text = (dongia * numSLBan.Value).ToString() + " + " + (dongia * numSLDuTru.Value).ToString();
+        }
+
         private void CmbSanh_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            TinhTienBan();
         }
 
         private bool CheckThongTinTC()
@@ -347,7 +366,7 @@ namespace QuanLyTiecCuoi
             MessageBox.Show(ngayToChuc);
             int tienDatCoc = int.Parse(tbDatCoc.Text);
             int slBan = int.Parse(numSLBan.Value.ToString());
-            int slDuTru = int.Parse(numSLDuTru.ToString());
+            int slDuTru = int.Parse(numSLDuTru.Value.ToString());
             DTO.DTO_TiecCuoi tc = new DTO.DTO_TiecCuoi(maTC,maKH,maS,ngayToChuc,maCa,tienDatCoc,slBan,slDuTru);
             if (BUS_DatTiecCuoi.getDsMaTiecCuoi().Contains(maTC))
             {
@@ -365,6 +384,9 @@ namespace QuanLyTiecCuoi
                 if(BUS_DatTiecCuoi.themTiecCuoi(tc))
                 {
                     MessageBox.Show("Thêm thành công.");
+                    cmbMaTiecCuoi.Items.Add(maTC);
+                    CapNhatBtt(maTC);
+                    
                 }
                 else
                 {
@@ -389,13 +411,59 @@ namespace QuanLyTiecCuoi
 
             foreach ((string x, string y) in ds)
             {
-                bool state =  BUS.BUS_DatTiecCuoi.themDatMonAn(cmbMaTiecCuoi.Text, x, y);
+                DTO.DTO_DatMonAn dma = new DTO.DTO_DatMonAn();
+                dma.MA_TIEC_CUOI = cmbMaTiecCuoi.Text;
+                dma.MA_MON_AN = x;
+                dma.GHI_CHU = y;
+                bool state =  BUS.BUS_DatTiecCuoi.themDatMonAn(dma);
                 if (!state)
                 {
                     MessageBox.Show("Lỗi thêm món:"+ x);
                 }
             }
             
+        }
+
+        private String GetNewMaTC()
+        {
+            int bonus = 0;
+            string ma = String.Format("TC{0}", BUS_DatTiecCuoi.getDsMaTiecCuoi().Length + 1 + bonus);
+            while (BUS_DatTiecCuoi.getDsMaTiecCuoi().Contains(ma))
+            {
+                bonus++;
+                ma = String.Format("TC{0}", BUS_DatTiecCuoi.getDsMaTiecCuoi().Length + 1 + bonus);
+            }
+            return ma;
+        }
+
+        private void ClearTCField()
+        {
+            dateTimePicker1.Value = DateTime.Today;
+            cmbCa.Text = "";
+            numSLBan.Value = 0;
+            numSLDuTru.Value = 0;
+            cmbSanh.Text = "";
+            tbDatCoc.Text = "0";
+            lbConlai.Text = "0";
+            lbTienBan.Text = "0";
+        }
+
+        private void BttThemDT_Click(object sender, EventArgs e)
+        {
+            String maTC = GetNewMaTC();
+            cmbMaTiecCuoi.Text = maTC;
+            ClearTCField();
+            CapNhatBtt(maTC);
+        }
+
+        private void NumSLBan_ValueChanged(object sender, EventArgs e)
+        {
+            TinhTienBan();
+        }
+
+        private void NumSLDuTru_ValueChanged(object sender, EventArgs e)
+        {
+            TinhTienBan();
         }
     }
 }

@@ -8,7 +8,7 @@ namespace DAO
 {
     public static class DAO_KhachHang
     {
-        public static String[] getDanhSachKhachHang()
+        public static String[] getDanhSachMaKhachHang()
         {
             String sql = @"SELECT MA_KHACH_HANG FROM KHACH_HANG";
             DataTable ds = DatabaseHelper.GetData(sql);
