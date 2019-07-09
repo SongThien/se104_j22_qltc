@@ -1,1 +1,15 @@
-.vs\
+.vs
+
+DAO\obj
+DAO\bin
+
+BUS\obj
+BUS\bin
+
+DTO\obj
+DTO\bin
+
+QuanLyTiecCuoi\obj
+QuanLyTiecCuoi\bin
+
+DAO\DatabaseHelper.cs
