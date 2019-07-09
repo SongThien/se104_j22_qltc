@@ -60,7 +60,7 @@ namespace DAO
         }
         public static bool capNhatThongTinTiecCuoi(DTO.DTO_TiecCuoi tc)
         {
-            String sql = String.Format(@"UPDATE KHACH_HANG SET MA_KHACH_HANG = {1}, MA_SANH = {2}, NGAY_TO_CHUC = {3}, MA_CA = {4}, TIEN_DAT_COC = {5}, SL_BAN = {6}, SL_BAN_DU_TRU = {7} WHERE MA_TIEC_CUOI='{0}' ",
+            String sql = String.Format(@"UPDATE TIEC_CUOI SET MA_KHACH_HANG = '{1}', MA_SANH = '{2}', NGAY_TO_CHUC = '{3}', MA_CA = '{4}', TIEN_DAT_COC = {5}, SL_BAN = {6}, SL_BAN_DU_TRU = {7} WHERE MA_TIEC_CUOI='{0}' ",
                 tc.MA_TIEC_CUOI, tc.MA_KHACH_HANG, tc.MA_SANH, tc.NGAY_TO_CHUC, tc.MA_CA, tc.TIEN_DAT_COC, tc.SL_BAN, tc.SL_BAN_DU_TRU);
             if (DatabaseHelper.ExcuteSql(sql) > 0)
             {
@@ -128,6 +128,16 @@ namespace DAO
                 return result.ToArray();
             }
             return null;
+        }
+        public static bool xoaTiecCuoi(string maTC)
+        {
+            String sql = String.Format(@"DELETE FROM TIEC_CUOI WHERE MA_TIEC_CUOI = '{0}'", maTC);
+            Console.WriteLine(sql);
+            if (DatabaseHelper.ExcuteSql(sql) > 0)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

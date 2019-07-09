@@ -74,11 +74,12 @@ namespace QuanLyTiecCuoi
         private String GetNewMaKH()
         {
             int bonus = 0;
-            string ma = String.Format("KH{0}", BUS_DatTiecCuoi.getDanhSachMaKhachHang().Length + 1 + bonus);
-            while (BUS_DatTiecCuoi.getDanhSachMaKhachHang().Contains(ma))
+            String[] d = BUS_DatTiecCuoi.getDanhSachMaKhachHang();
+            string ma = String.Format("KH{0}", d.Length + 1 + bonus);
+            while (d.Contains(ma))
             {
                 bonus++;
-                ma = String.Format("KH{0}", BUS_DatTiecCuoi.getDanhSachMaKhachHang().Length + 1 + bonus);
+                ma = String.Format("KH{0}", d.Length + 1 + bonus);
             }
             return ma;
         }
@@ -285,20 +286,39 @@ namespace QuanLyTiecCuoi
             if (BUS_DatTiecCuoi.getDsMaTiecCuoi().Contains(maTC))
             {
                 bttThemMA.Enabled = true;
+                button2.Enabled = true;
                 button3.Enabled = true;
+                button4.Enabled = true;
             }
             else
             {
                 bttThemMA.Enabled = false;
+                button2.Enabled = false;
                 button3.Enabled = false;
+                button4.Enabled = false;
+            }
+            if (BUS.BUS_DatTiecCuoi.getDsMaTiecCuoiDaThanhToan().Contains(maTC))
+            {
+                bttThemMA.Enabled = false;
+                button2.Enabled = false;
+                button3.Enabled = false;
+                button4.Enabled = false;
+                button9.Enabled = false;
             }
         
         }
-
-        private void CmbMaTiecCuoi_SelectedIndexChanged(object sender, EventArgs e)
+        private void LoadTC()
         {
             String maTC = cmbMaTiecCuoi.Text;
             DTO.DTO_TiecCuoi tc = BUS_DatTiecCuoi.getThongTinTiecCuoi(maTC);
+            if (tc == null)
+            {
+                HienThiDsMonAn(maTC);
+                HienThiDsDichVu(maTC);
+                CapNhatBtt(maTC);
+                KiemTraSanhTrong();
+                return;
+            }
             DTO.DTO_KhachHang kh = BUS_DatTiecCuoi.getThongTinKhachHang(tc.MA_KHACH_HANG);
             cmbSanh.Text = tc.MA_SANH.Trim();
             cmbCa.Text = tc.MA_CA.Trim();
@@ -309,9 +329,12 @@ namespace QuanLyTiecCuoi
             HienThiThongTinTC(tc);
             HienThiDsMonAn(maTC);
             HienThiDsDichVu(maTC);
-            CapNhatBtt(maTC);
             KiemTraSanhTrong();
-
+            CapNhatBtt(maTC);
+        }
+        private void CmbMaTiecCuoi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadTC();
         }
 
         private void DtMA_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -337,6 +360,7 @@ namespace QuanLyTiecCuoi
         private void DateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             KiemTraSanhTrong();
+            CapNhatBtt(cmbMaTiecCuoi.Text);
         }
 
         private void TinhTienBan()
@@ -353,6 +377,7 @@ namespace QuanLyTiecCuoi
         {
             TinhTienBan();
             KiemTraSanhTrong();
+            CapNhatBtt(cmbMaTiecCuoi.Text);
         }
 
         private bool CheckThongTinTC()
@@ -492,6 +517,7 @@ namespace QuanLyTiecCuoi
             cmbMaTiecCuoi.Text = maTC;
             ClearTCField();
             CapNhatBtt(maTC);
+            LoadTC();
         }
 
         private void NumSLBan_ValueChanged(object sender, EventArgs e)
@@ -558,7 +584,10 @@ namespace QuanLyTiecCuoi
         private void TinhTienMonAn()
         {
             int sum = 0;
-            int u = BUS_DatTiecCuoi.getThongTinTiecCuoi(cmbMaTiecCuoi.Text).SL_BAN;
+            DTO.DTO_TiecCuoi x = BUS_DatTiecCuoi.getThongTinTiecCuoi(cmbMaTiecCuoi.Text);
+            if (x == null)
+                return;
+            int u = x.SL_BAN;
             for (int i = 0; i< dtMA.Rows.Count - 1 ;i++)
             {
                 sum += int.Parse(dtMA.Rows[i].Cells[2].Value.ToString().Trim());
@@ -579,6 +608,26 @@ namespace QuanLyTiecCuoi
         private void CmbCa_SelectedIndexChanged(object sender, EventArgs e)
         {
             KiemTraSanhTrong();
+            CapNhatBtt(cmbMaTiecCuoi.Text);
+        }
+
+        private void Button6_Click(object sender, EventArgs e)
+        {
+            if (BUS_DatTiecCuoi.getDsMaTiecCuoiDaThanhToan().Contains(cmbMaTiecCuoi.Text))
+            {
+                MessageBox.Show("Không thể xoá! Tiệc đã thanh toán");
+                return;
+            }
+            bool state = BUS_DatTiecCuoi.xoaTiecCuoi(cmbMaTiecCuoi.Text);
+            if(state)
+            {
+                MessageBox.Show("Xoá thành công");
+                LoadTC();
+            }
+            else
+            {
+                MessageBox.Show("Xoá thất bại");
+            }
         }
     }
 }

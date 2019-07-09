@@ -60,5 +60,26 @@ namespace QuanLyTiecCuoi
             x.MdiParent = this;
             x.Show();
         }
+
+        private void DichVu_Click(object sender, EventArgs e)
+        {
+            Form x = new ThemDichVu_Form();
+            x.MdiParent = this;
+            x.Show();
+        }
+
+        private void MonAn_Click(object sender, EventArgs e)
+        {
+            Form x = new themMonAn_form();
+            x.MdiParent = this;
+            x.Show();
+        }
+
+        private void Ca_Click(object sender, EventArgs e)
+        {
+            Form x = new ThemCa_form();
+            x.MdiParent = this;
+            x.Show();
+        }
     }
 }

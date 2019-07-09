@@ -27,7 +27,7 @@ namespace QuanLyTiecCuoi.QuanLy_forms
         public void LoadDataGridView()
         {
             DgvDSDichVu.DataSource = BUS_QuanLyDichVu.GetDataTableDichVu();
-            if (DgvDSDichVu.Columns.Count < 0)
+            if (DgvDSDichVu.Columns.Count < 1)
                 return;
             DgvDSDichVu.Columns[0].HeaderText = "Mã Dich vụ";
             DgvDSDichVu.Columns[1].HeaderText = "Tên Dịch Vụ";
@@ -40,11 +40,12 @@ namespace QuanLyTiecCuoi.QuanLy_forms
         private String GetNewMaDV()
         {
             int bonus = 0;
-            string ma = String.Format("MDV{0}", BUS_TiepNhanSanh.getDanhSachSanh().Length + 1 + bonus);
-            while (BUS_TiepNhanSanh.getDanhSachSanh().Contains(ma))
+            String[] d = BUS_QuanLyDichVu.getDsMaDichVu();
+            string ma = String.Format("MDV{0}", d.Length + 1 + bonus);
+            while (d.Contains(ma))
             {
                 bonus++;
-                ma = String.Format("MDV{0}", BUS_TiepNhanSanh.getDanhSachSanh().Length + 1 + bonus);
+                ma = String.Format("MDV{0}", d.Length + 1 + bonus);
             }
             return ma;
         }

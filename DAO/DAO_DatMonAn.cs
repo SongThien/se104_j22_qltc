@@ -36,5 +36,15 @@ namespace DAO
             }
             return false;
         }
+        public static bool xoaDatMonAn(string s)
+        {
+            String sql = String.Format(@"DELETE FROM DAT_MON_AN WHERE MA_TIEC_CUOI = '{0}'",s);
+            Console.WriteLine(sql);
+            if (DatabaseHelper.ExcuteSql(sql) > 0)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

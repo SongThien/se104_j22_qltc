@@ -78,5 +78,21 @@ namespace DAO
             }
             return result;
         }
+        public static String[] getDsMaDichVu()
+        {
+            String sql = @"SELECT MA_DICH_VU FROM DICH_VU";
+            DataTable ds = DatabaseHelper.GetData(sql);
+            List<String> result = new List<String>();
+            if (ds != null)
+            {
+                foreach (DataRow row in ds.Rows)
+                {
+                    result.Add(row[0].ToString().Trim());
+                }
+
+                return result.ToArray();
+            }
+            return null;
+        }
     }
 }

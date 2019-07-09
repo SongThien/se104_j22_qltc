@@ -30,15 +30,15 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.dtMonAn = new System.Windows.Forms.DataGridView();
-            this.lbTen = new System.Windows.Forms.TextBox();
-            this.lbDonGia = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.lbMa = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbDonGia = new System.Windows.Forms.TextBox();
+            this.lbTen = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.dtMonAn = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtMonAn)).BeginInit();
@@ -52,6 +52,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Thêm";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // groupBox1
             // 
@@ -71,63 +72,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin món ăn";
             // 
-            // button2
+            // lbMa
             // 
-            this.button2.Location = new System.Drawing.Point(106, 158);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Cập nhật";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(187, 158);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Xoá";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // dtMonAn
-            // 
-            this.dtMonAn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtMonAn.Location = new System.Drawing.Point(377, 65);
-            this.dtMonAn.Name = "dtMonAn";
-            this.dtMonAn.Size = new System.Drawing.Size(398, 312);
-            this.dtMonAn.TabIndex = 2;
-            // 
-            // lbTen
-            // 
-            this.lbTen.Location = new System.Drawing.Point(100, 61);
-            this.lbTen.Name = "lbTen";
-            this.lbTen.Size = new System.Drawing.Size(162, 20);
-            this.lbTen.TabIndex = 3;
-            // 
-            // lbDonGia
-            // 
-            this.lbDonGia.Location = new System.Drawing.Point(100, 113);
-            this.lbDonGia.Name = "lbDonGia";
-            this.lbDonGia.Size = new System.Drawing.Size(162, 20);
-            this.lbDonGia.TabIndex = 4;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 61);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Tên món ăn";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 116);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Đơn giá";
+            this.lbMa.AutoSize = true;
+            this.lbMa.Location = new System.Drawing.Point(100, 28);
+            this.lbMa.Name = "lbMa";
+            this.lbMa.Size = new System.Drawing.Size(33, 13);
+            this.lbMa.TabIndex = 8;
+            this.lbMa.Text = "None";
             // 
             // label3
             // 
@@ -138,14 +90,66 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Mã món ăn:";
             // 
-            // lbMa
+            // label2
             // 
-            this.lbMa.AutoSize = true;
-            this.lbMa.Location = new System.Drawing.Point(100, 28);
-            this.lbMa.Name = "lbMa";
-            this.lbMa.Size = new System.Drawing.Size(33, 13);
-            this.lbMa.TabIndex = 8;
-            this.lbMa.Text = "None";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(22, 116);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Đơn giá";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(22, 61);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Tên món ăn";
+            // 
+            // lbDonGia
+            // 
+            this.lbDonGia.Location = new System.Drawing.Point(100, 113);
+            this.lbDonGia.Name = "lbDonGia";
+            this.lbDonGia.Size = new System.Drawing.Size(162, 20);
+            this.lbDonGia.TabIndex = 4;
+            // 
+            // lbTen
+            // 
+            this.lbTen.Location = new System.Drawing.Point(100, 61);
+            this.lbTen.Name = "lbTen";
+            this.lbTen.Size = new System.Drawing.Size(162, 20);
+            this.lbTen.TabIndex = 3;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(187, 158);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "Xoá";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(106, 158);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Cập nhật";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
+            // 
+            // dtMonAn
+            // 
+            this.dtMonAn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtMonAn.Location = new System.Drawing.Point(377, 65);
+            this.dtMonAn.Name = "dtMonAn";
+            this.dtMonAn.Size = new System.Drawing.Size(398, 312);
+            this.dtMonAn.TabIndex = 2;
+            this.dtMonAn.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtMonAn_CellContentClick);
             // 
             // label5
             // 

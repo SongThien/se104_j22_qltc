@@ -44,11 +44,12 @@ namespace QuanLyTiecCuoi.QuanLy_forms
         private String GetNewMaCa()
         {
             int bonus = 0;
-            string ma = String.Format("MCa{0}", BUS_TiepNhanSanh.getDanhSachSanh().Length + 1 + bonus);
-            while (BUS_TiepNhanSanh.getDanhSachSanh().Contains(ma))
+            String[] d = BUS_TiepNhanSanh.getDanhSachSanh();
+            string ma = String.Format("MCa{0}", d.Length + 1 + bonus);
+            while (d.Contains(ma))
             {
                 bonus++;
-                ma = String.Format("MCa{0}", BUS_TiepNhanSanh.getDanhSachSanh().Length + 1 + bonus);
+                ma = String.Format("MCa{0}", d.Length + 1 + bonus);
             }
             return ma;
         }

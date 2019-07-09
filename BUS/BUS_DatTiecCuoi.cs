@@ -116,5 +116,16 @@ namespace BUS
         {
             return DAO.DAO_TiecCuoi.kiemTraSanhTrong(matc, sa, ngay, ca);
         }
+        public static String[] getDsMaTiecCuoiDaThanhToan()
+        {
+            return DAO.DAO_TiecCuoi.getDsMaTiecCuoiDaThanhToan();
+        }
+
+        public static bool xoaTiecCuoi(string ma)
+        {
+            DAO.DAO_DatMonAn.xoaDatMonAn(ma);
+            DAO.DAO_DatDichVu.xoaDatDichVu(ma);
+            return DAO.DAO_TiecCuoi.xoaTiecCuoi(ma);
+        }
     }
 }

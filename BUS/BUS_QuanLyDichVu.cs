@@ -15,6 +15,10 @@ namespace BUS
         {
             return DAO_DichVu.GetDataTableDichVu();
         }
+        public static String[] getDsMaDichVu()
+        {
+            return DAO_DichVu.getDsMaDichVu();
+        }
         public static bool themDV(DTO.DTO_DichVu dv)
         {
             return DAO.DAO_DichVu.themDV(dv);
