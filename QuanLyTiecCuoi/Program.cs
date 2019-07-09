@@ -17,7 +17,7 @@ namespace QuanLyTiecCuoi
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TiepNhanSanh_form());
+            Application.Run(new DatTiecCuoi_form());
         }
     }
 }

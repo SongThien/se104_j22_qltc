@@ -35,16 +35,37 @@ namespace DAO
                 result = new DTO.DTO_TiecCuoi();
                 DataRow row = da.Rows[0];
                 result.MA_TIEC_CUOI = maTC;
-                result.MA_SANH = row["MA_SANH"].ToString();
                 result.MA_KHACH_HANG = row["MA_KHACH_HANG"].ToString();
-                result.MA_CA = row["MA_CA"].ToString();
+                result.MA_SANH = row["MA_SANH"].ToString();                
                 result.NGAY_TO_CHUC = row["NGAY_TO_CHUC"].ToString();
+                result.MA_CA = row["MA_CA"].ToString();
                 result.TIEN_DAT_COC = int.Parse(row["TIEN_DAT_COC"].ToString());
                 result.SL_BAN = int.Parse(row["SL_BAN"].ToString());
                 result.SL_BAN_DU_TRU = int.Parse(row["SL_BAN_DU_TRU"].ToString());
             }
             Console.WriteLine("ok");
             return result;
+        }
+        public static bool capNhatThongTinTiecCuoi(DTO.DTO_TiecCuoi tc)
+        {
+            String sql = String.Format(@"INSERT INTO TIEC_CUOI (MA_TIEC_CUOI, MA_KHACH_HANG, MA_SANH, NGAY_TO_CHUC, MA_CA, TIEN_DAT_COC, SL_BAN, SL_BAN_DU_TRU) VALUES ('{0}','{1}','{2}','{3}','{4}',{5},{6},{7})",
+                tc.MA_TIEC_CUOI, tc.MA_KHACH_HANG, tc.MA_SANH, tc.NGAY_TO_CHUC, tc.MA_CA, tc.TIEN_DAT_COC, tc.SL_BAN, tc.SL_BAN_DU_TRU);
+            Console.WriteLine(sql);
+            if (DatabaseHelper.ExcuteSql(sql) > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+        public static bool themTiecCuoi(DTO.DTO_TiecCuoi tc)
+        {
+            String sql = String.Format(@"UPDATE KHACH_HANG SET MA_KHACH_HANG = {1}, MA_SANH = {2}, NGAY_TO_CHUC = {3}, MA_CA = {4}, TIEN_DAT_COC = {5}, SL_BAN = {6}, SL_BAN_DU_TRU = {7} WHERE MA_TIEC_CUOI='{0}' ",
+                tc.MA_TIEC_CUOI, tc.MA_KHACH_HANG, tc.MA_SANH, tc.NGAY_TO_CHUC, tc.MA_CA, tc.TIEN_DAT_COC, tc.SL_BAN, tc.SL_BAN_DU_TRU);
+            if (DatabaseHelper.ExcuteSql(sql) > 0)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

@@ -4,8 +4,10 @@ using System.Text;
 
 namespace DTO
 {
-    class DTO_DatMonAn
+    public class DTO_DatMonAn
     {
-
+        public string MA_TIEC_CUOI { get; set; }
+        public string MA_MON_AN { get; set; }
+        public string GHI_CHU { get; set; }
     }
 }

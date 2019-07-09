@@ -225,6 +225,17 @@ namespace QuanLyTiecCuoi
             if (cmbDsMonAn.SelectedIndex < 0)
                 return;
             DTO.DTO_MonAn ma = GetCurMA();
+            List<String> d = new List<String>();
+            foreach(DataGridViewRow x in dtMA.Rows)
+            {
+                if (x.Cells["id"].Value != null)
+                    d.Add(x.Cells["id"].Value.ToString());
+            }
+            if (d.Contains(ma.MA_MON_AN))
+            {
+                MessageBox.Show("Món ăn đã có trong bảng.");
+                return;
+            }
             dtMA.Rows.Add(ma.MA_MON_AN, ma.TEN_MON_AN, ma.DON_GIA, tbGhiChuMA.Text);
         }
 
@@ -241,9 +252,9 @@ namespace QuanLyTiecCuoi
 
         }
 
-        private void HienThiDsMonAn(String tc)
+        private void HienThiDsMonAn(String maTC)
         {
-
+            dtMA.DataSource = BUS_DatTiecCuoi.getDsMonAnDaDat(maTC);
         }
 
         private void HienThiDsDichVu(String maTC)
@@ -284,6 +295,107 @@ namespace QuanLyTiecCuoi
         private void CmbSanh_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private bool CheckThongTinTC()
+        {
+            if (cmbMaTiecCuoi.Text.Trim() == "")
+            {
+                MessageBox.Show("Chưa có mã tiệc cưới.");
+                return false;
+            }
+            if (cmbMaKH.Text.Trim() == "")
+            {
+                MessageBox.Show("Chưa chọn khách hàngi.");
+                return false;
+            }
+            if (cmbSanh.Text.Trim() == "")
+            {
+                MessageBox.Show("Chưa Sảnh.");
+                return false;
+            }
+            if (cmbCa.Text.Trim() == "")
+            {
+                MessageBox.Show("Chưa chọn ca.");
+                return false;
+            }
+            if (dateTimePicker1.Value < DateTime.Today)
+            {
+                MessageBox.Show("Không được chọn ngày trong quá khứ.");
+                return false;
+            }
+            if (int.Parse((numSLBan.Value + numSLDuTru.Value).ToString()) > BUS_DatTiecCuoi.getThongTinSanh(cmbSanh.Text).SO_LUONG_BAN)
+            {
+                MessageBox.Show("Số lượng bàn đã đặt vượt quá số lượng bàn của sảnh.");
+                return false;
+            }
+            return true;
+        }
+
+        private void Button9_Click(object sender, EventArgs e)
+        { 
+            bool state = CheckThongTinTC();
+            if (!state)
+            {
+                return;
+            }
+            String maTC = cmbMaTiecCuoi.Text;
+            String maKH = cmbMaKH.Text;
+            String maS = cmbSanh.Text;
+            String maCa = cmbCa.Text;
+            String ngayToChuc = dateTimePicker1.Value.ToString("yyyy-MM-dd"); ;
+            MessageBox.Show(ngayToChuc);
+            int tienDatCoc = int.Parse(tbDatCoc.Text);
+            int slBan = int.Parse(numSLBan.Value.ToString());
+            int slDuTru = int.Parse(numSLDuTru.ToString());
+            DTO.DTO_TiecCuoi tc = new DTO.DTO_TiecCuoi(maTC,maKH,maS,ngayToChuc,maCa,tienDatCoc,slBan,slDuTru);
+            if (BUS_DatTiecCuoi.getDsMaTiecCuoi().Contains(maTC))
+            {
+                if(BUS_DatTiecCuoi.capNhatThongTinTiecCuoi(tc))
+                {
+                    MessageBox.Show("Cập nhật thành công.");
+                }
+                else
+                {
+                    MessageBox.Show("Cập nhật thất bại.");
+                }
+            }
+            else
+            {
+                if(BUS_DatTiecCuoi.themTiecCuoi(tc))
+                {
+                    MessageBox.Show("Thêm thành công.");
+                }
+                else
+                {
+                    MessageBox.Show("Thêm thất bại.");
+                }
+            }
+            
+
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            List<(String,String)> ds = new List<(String,String)>();
+
+            foreach (DataGridViewRow x in dtMA.Rows)
+            {
+                if (x.Cells["id"].Value != null)
+                    ds.Add((x.Cells["id"].Value.ToString(), x.Cells["note"].Value.ToString()));
+            }
+
+
+
+            foreach ((string x, string y) in ds)
+            {
+                bool state =  BUS.BUS_DatTiecCuoi.themDatMonAn(cmbMaTiecCuoi.Text, x, y);
+                if (!state)
+                {
+                    MessageBox.Show("Lỗi thêm món:"+ x);
+                }
+            }
+            
         }
     }
 }

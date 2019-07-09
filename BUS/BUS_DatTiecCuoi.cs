@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
 using DTO;
 
@@ -54,6 +55,32 @@ namespace BUS
         {
             return DAO.DAO_Ca.getThongTinCa(maC);
         }
-        
+
+        public static DataTable getDsMonAnDaDat(String maTC)
+        {
+            return DAO.DAO_DatMonAn.getDsMonAnDaDat(maTC);
+        }
+
+        public static DataTable getDsDichVuDaDat(String maTC)
+        {
+            return DAO.DAO_DatDichVu.getDsDichVuDaDat(maTC);
+        }
+        public static bool capNhatThongTinTiecCuoi(DTO.DTO_TiecCuoi s)
+        {
+            return DAO.DAO_TiecCuoi.capNhatThongTinTiecCuoi(s);
+        }
+        public static bool themTiecCuoi(DTO.DTO_TiecCuoi s)
+        {
+            return DAO.DAO_TiecCuoi.themTiecCuoi(s);
+        }
+        public static bool themDatMonAn(string maTC, string maMA, string ghichu)
+        {
+            return false;
+        }
+        public static bool themDatDichVu(string maTC, string maDV, string sl)
+        {
+            return false;
+        }
+
     }
 }

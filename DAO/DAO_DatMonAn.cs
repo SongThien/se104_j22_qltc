@@ -1,10 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
 
 namespace DAO
 {
-    class DAO_DatMonAn
+    public static class DAO_DatMonAn
     {
+        public static DataTable getDsMonAnDaDat(String maTC)
+        {
+            String sql = String.Format(@"SELECT DAT_MON_AN.MA_MON_AN, TEN_MON_AN, GHI_CHU FROM DAT_MON_AN , MON_AN WHERE MA_TIEC_CUOI = '{0}', DAT_MON_AN.MA_MON_AN = MON_AN.MA_MON_AN", maTC);
+            DataTable ds;
+            ds = DatabaseHelper.GetData(sql);
+            return ds;
+        }
+        public static bool themDatMonAn(DTO.DTO_DatMonAn s)
+        {
+            String sql = String.Format(@"INSERT INTO DAT_MON_AM (MA_TIEC_CUOI, TEN_MON_AN, GHI_CHU) VALUES ('{0}','{1}','{2}')",
+                s.MA_TIEC_CUOI,s.MA_MON_AN, s.GHI_CHU);
+            Console.WriteLine(sql);
+            if (DatabaseHelper.ExcuteSql(sql) > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+        public static bool xoaDatMonAn(DTO.DTO_DatMonAn s)
+        {
+            String sql = String.Format(@"INSERT INTO DAT_MON_AM (MA_TIEC_CUOI, TEN_MON_AN, GHI_CHU) VALUES ('{0}','{1}','{2}')",
+                s.MA_TIEC_CUOI, s.MA_MON_AN, s.GHI_CHU);
+            Console.WriteLine(sql);
+            if (DatabaseHelper.ExcuteSql(sql) > 0)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

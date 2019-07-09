@@ -86,6 +86,9 @@
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.cmbDsDichVu = new System.Windows.Forms.ComboBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numSLDuTru)).BeginInit();
@@ -95,6 +98,7 @@
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtDV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -204,7 +208,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button9);
             this.groupBox2.Controls.Add(this.bttThemDT);
             this.groupBox2.Controls.Add(this.button6);
             this.groupBox2.Controls.Add(this.cmbMaTiecCuoi);
@@ -234,12 +237,13 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(257, 197);
+            this.button9.Location = new System.Drawing.Point(18, 40);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(155, 55);
             this.button9.TabIndex = 24;
             this.button9.Text = "Đặt tiệc  / Cập nhật";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.Button9_Click);
             // 
             // bttThemDT
             // 
@@ -362,6 +366,7 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.CustomFormat = "";
             this.dateTimePicker1.Location = new System.Drawing.Point(101, 55);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(216, 20);
@@ -659,11 +664,43 @@
             this.cmbDsDichVu.Size = new System.Drawing.Size(267, 21);
             this.cmbDsDichVu.TabIndex = 0;
             // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.button5);
+            this.groupBox5.Controls.Add(this.button1);
+            this.groupBox5.Controls.Add(this.button9);
+            this.groupBox5.Location = new System.Drawing.Point(42, 565);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(432, 183);
+            this.groupBox5.TabIndex = 4;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Thao tác";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(235, 40);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(155, 55);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "Cập nhật danh sách món ăn";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(235, 110);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(155, 55);
+            this.button5.TabIndex = 26;
+            this.button5.Text = "Cập nhật danh sách dịch vụ";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
             // DatTiecCuoi_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1191, 813);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -684,6 +721,7 @@
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtDV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.groupBox5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -748,5 +786,8 @@
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.DataGridView dtMA;
         private System.Windows.Forms.DataGridView dtDV;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button1;
     }
 }

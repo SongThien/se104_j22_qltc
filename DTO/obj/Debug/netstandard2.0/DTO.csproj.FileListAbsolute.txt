@@ -6,3 +6,4 @@ C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\DTO\obj\Debug\netstandard2.0
 C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\DTO\obj\Debug\netstandard2.0\DTO.AssemblyInfo.cs
 C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\DTO\obj\Debug\netstandard2.0\DTO.dll
 C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\DTO\obj\Debug\netstandard2.0\DTO.pdb
+C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\DTO\obj\Debug\netstandard2.0\DTO.csprojAssemblyReference.cache
