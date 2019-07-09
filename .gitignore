@@ -1,15 +1,16 @@
 .vs
 
-DAO\obj
-DAO\bin
+DAO/obj
+DAO/bin
 
-BUS\obj
-BUS\bin
+BUS/obj
+BUS/bin
 
-DTO\obj
-DTO\bin
+DTO/obj
+DTO/bin
 
-QuanLyTiecCuoi\obj
-QuanLyTiecCuoi\bin
+QuanLyTiecCuoi/obj
+QuanLyTiecCuoi/bin
 
-DAO\DatabaseHelper.cs
+DAO/DatabaseHelper.cs
+QuanLyTiecCuoi/Program.cs
