@@ -70,12 +70,6 @@
     <Compile Include="QuanLy_forms\DanhSachTiecCuoi_form.Designer.cs">
       <DependentUpon>DanhSachTiecCuoi_form.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLy_forms\LapHoaDon.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuanLy_forms\LapHoaDon.Designer.cs">
-      <DependentUpon>LapHoaDon.cs</DependentUpon>
-    </Compile>
     <Compile Include="QuanLy_forms\LapHoaDon_form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +87,7 @@
     </Compile>
     <Compile Include="QuanLy_forms\ThemDichVu_Form.Designer.cs">
       <DependentUpon>ThemDichVu_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLy_forms\themMonAn_form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +119,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLy_forms\ThemDichVu_Form.resx">
       <DependentUpon>ThemDichVu_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuanLy_forms\themMonAn_form.resx">
       <DependentUpon>themMonAn_form.cs</DependentUpon>
     </EmbeddedResource>
