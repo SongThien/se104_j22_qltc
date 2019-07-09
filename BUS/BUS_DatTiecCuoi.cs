@@ -73,14 +73,21 @@ namespace BUS
         {
             return DAO.DAO_TiecCuoi.themTiecCuoi(s);
         }
-        public static bool themDatMonAn(string maTC, string maMA, string ghichu)
+        public static bool themDatMonAn(DTO.DTO_DatMonAn dma)
         {
-            return false;
+            return DAO.DAO_DatMonAn.themDatMonAn(dma);
         }
-        public static bool themDatDichVu(string maTC, string maDV, string sl)
+        public static bool xoaDatMonAn(DTO.DTO_DatMonAn dma)
         {
-            return false;
+            return DAO.DAO_DatMonAn.xoaDatMonAn(dma);
         }
-
+        public static bool themDatDichVu(DTO_DatDichVu ddv)
+        {
+            return DAO.DAO_DatDichVu.themDatDichVu(ddv);
+        }
+        public static bool xoaDatDichVu(DTO_DatDichVu ddv)
+        {
+            return DAO.DAO_DatDichVu.xoaDatDichVu(ddv);
+        }
     }
 }

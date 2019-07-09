@@ -14,5 +14,27 @@ namespace DAO
             ds = DatabaseHelper.GetData(sql);
             return ds;
         }
+        public static bool themDatDichVu(DTO.DTO_DatDichVu s)
+        {
+            String sql = String.Format(@"INSERT INTO DAT_DICH_VU (MA_TIEC_CUOI, MA_DICH_VU, SOLUONG) VALUES ('{0}','{1}','{2}')",
+                s.MA_TIEC_CUOI, s.MA_DICH_VU, s.SO_LUONG);
+            Console.WriteLine(sql);
+            if (DatabaseHelper.ExcuteSql(sql) > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+        public static bool xoaDatDichVu(DTO.DTO_DatDichVu s)
+        {
+            String sql = String.Format(@"DELETE FROM DAT_DICH_VU WHERE MA_TIEC_CUOI = {0}, MA_DICH_VU = {1}')",
+                s.MA_TIEC_CUOI, s.MA_DICH_VU);
+            Console.WriteLine(sql);
+            if (DatabaseHelper.ExcuteSql(sql) > 0)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

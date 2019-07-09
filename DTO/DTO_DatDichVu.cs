@@ -4,7 +4,10 @@ using System.Text;
 
 namespace DTO
 {
-    class DTO_DatDichVu
+    public class DTO_DatDichVu
     {
+        public string MA_TIEC_CUOI { get; set; }
+        public string MA_DICH_VU { get; set; }
+        public string SO_LUONG { get; set; }
     }
 }
