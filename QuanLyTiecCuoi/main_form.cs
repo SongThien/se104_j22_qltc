@@ -88,7 +88,7 @@ namespace QuanLyTiecCuoi
 
         private void BaoCao_Click(object sender, EventArgs e)
         {
-            Form x = new BaoCaoDoandSo_form();
+            Form x = new BaoCaoDoanhSo_form();
             x.MdiParent = this;
             x.Show();
         }

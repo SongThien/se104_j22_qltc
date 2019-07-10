@@ -108,9 +108,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(16, 160);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 13);
+            this.label2.Size = new System.Drawing.Size(68, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Thời gian BD";
+            this.label2.Text = "Thời gian KT";
             // 
             // label1
             // 

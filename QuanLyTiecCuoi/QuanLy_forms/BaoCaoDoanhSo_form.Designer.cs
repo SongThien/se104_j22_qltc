@@ -1,6 +1,6 @@
 ﻿namespace QuanLyTiecCuoi.QuanLy_forms
 {
-    partial class BaoCaoDoandSo_form
+    partial class BaoCaoDoanhSo_form
     {
         /// <summary>
         /// Required designer variable.
@@ -166,7 +166,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Name = "BaoCaoDoandSo_form";
-            this.Text = "Báo cáo doan số";
+            this.Text = "Báo cáo doanh số";
             this.Load += new System.EventHandler(this.BaoCaoDoandSo_form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBaoCao)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numThang)).EndInit();

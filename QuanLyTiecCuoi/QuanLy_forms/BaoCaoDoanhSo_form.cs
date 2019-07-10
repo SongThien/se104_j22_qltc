@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QuanLyTiecCuoi.QuanLy_forms
 {
-    public partial class BaoCaoDoandSo_form : Form
+    public partial class BaoCaoDoanhSo_form : Form
     {
-        public BaoCaoDoandSo_form()
+        public BaoCaoDoanhSo_form()
         {
             InitializeComponent();
         }

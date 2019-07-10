@@ -58,11 +58,11 @@
     <Compile Include="main_form.Designer.cs">
       <DependentUpon>main_form.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLy_forms\BaoCaoDoandSo_form.cs">
+    <Compile Include="QuanLy_forms\BaoCaoDoanhSo_form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuanLy_forms\BaoCaoDoandSo_form.Designer.cs">
-      <DependentUpon>BaoCaoDoandSo_form.cs</DependentUpon>
+    <Compile Include="QuanLy_forms\BaoCaoDoanhSo_form.Designer.cs">
+      <DependentUpon>BaoCaoDoanhSo_form.cs</DependentUpon>
     </Compile>
     <Compile Include="QuanLy_forms\DatTiecCuoi_form.cs">
       <SubType>Form</SubType>
@@ -117,8 +117,8 @@
     <EmbeddedResource Include="main_form.resx">
       <DependentUpon>main_form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanLy_forms\BaoCaoDoandSo_form.resx">
-      <DependentUpon>BaoCaoDoandSo_form.cs</DependentUpon>
+    <EmbeddedResource Include="QuanLy_forms\BaoCaoDoanhSo_form.resx">
+      <DependentUpon>BaoCaoDoanhSo_form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLy_forms\DatTiecCuoi_form.resx">
       <DependentUpon>DatTiecCuoi_form.cs</DependentUpon>
