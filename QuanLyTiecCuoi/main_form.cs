@@ -93,7 +93,7 @@ namespace QuanLyTiecCuoi
             x.Show();
         }
 
-        private void ThửKếtNốiToolStripMenuItem_Click(object sender, EventArgs e)
+        private void thuketnoi_click(object sender, EventArgs e)
         {
             bool state = BUS.BUS_Main.thuKetNoi();
             if (state)
@@ -104,6 +104,13 @@ namespace QuanLyTiecCuoi
             {
                 MessageBox.Show("Kết nối thất bại");
             }
+        }
+
+        private void taoketnoi_form_click(object sender, EventArgs e)
+        {
+            Form x = new taoKetNoiMoi_form();
+            x.MdiParent = this;
+            x.Show();
         }
     }
 }

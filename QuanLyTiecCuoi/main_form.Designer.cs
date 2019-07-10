@@ -30,6 +30,7 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tVu = new System.Windows.Forms.ToolStripMenuItem();
+            this.thửKếtNốiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Exit = new System.Windows.Forms.ToolStripMenuItem();
             this.tC = new System.Windows.Forms.ToolStripMenuItem();
             this.TiepNhanSanh = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,7 +45,8 @@
             this.qL = new System.Windows.Forms.ToolStripMenuItem();
             this.BaoCao = new System.Windows.Forms.ToolStripMenuItem();
             this.Ca = new System.Windows.Forms.ToolStripMenuItem();
-            this.thửKếtNốiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tạoKếtNốiMớiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,11 +67,20 @@
             // tVu
             // 
             this.tVu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tạoKếtNốiMớiToolStripMenuItem,
             this.thửKếtNốiToolStripMenuItem,
+            this.toolStripSeparator3,
             this.Exit});
             this.tVu.Name = "tVu";
             this.tVu.Size = new System.Drawing.Size(53, 20);
             this.tVu.Text = "Tác vụ";
+            // 
+            // thửKếtNốiToolStripMenuItem
+            // 
+            this.thửKếtNốiToolStripMenuItem.Name = "thửKếtNốiToolStripMenuItem";
+            this.thửKếtNốiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.thửKếtNốiToolStripMenuItem.Text = "Thử kết nối";
+            this.thửKếtNốiToolStripMenuItem.Click += new System.EventHandler(this.thuketnoi_click);
             // 
             // Exit
             // 
@@ -175,12 +186,17 @@
             this.Ca.Text = "Quản lý ca";
             this.Ca.Click += new System.EventHandler(this.Ca_Click);
             // 
-            // thửKếtNốiToolStripMenuItem
+            // tạoKếtNốiMớiToolStripMenuItem
             // 
-            this.thửKếtNốiToolStripMenuItem.Name = "thửKếtNốiToolStripMenuItem";
-            this.thửKếtNốiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.thửKếtNốiToolStripMenuItem.Text = "Thử kết nối";
-            this.thửKếtNốiToolStripMenuItem.Click += new System.EventHandler(this.ThửKếtNốiToolStripMenuItem_Click);
+            this.tạoKếtNốiMớiToolStripMenuItem.Name = "tạoKếtNốiMớiToolStripMenuItem";
+            this.tạoKếtNốiMớiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tạoKếtNốiMớiToolStripMenuItem.Text = "Tạo kết nối mới";
+            this.tạoKếtNốiMớiToolStripMenuItem.Click += new System.EventHandler(this.taoketnoi_form_click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
             // 
             // main_form
             // 
@@ -219,5 +235,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem thửKếtNốiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tạoKếtNốiMớiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
     }
 }

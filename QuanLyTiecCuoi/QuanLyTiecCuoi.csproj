@@ -82,6 +82,12 @@
     <Compile Include="QuanLy_forms\LapHoaDon_form.Designer.cs">
       <DependentUpon>LapHoaDon_form.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLy_forms\taoKetNoiMoi_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLy_forms\taoKetNoiMoi_form.Designer.cs">
+      <DependentUpon>taoKetNoiMoi_form.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLy_forms\ThemCa_form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLy_forms\LapHoaDon_form.resx">
       <DependentUpon>LapHoaDon_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLy_forms\taoKetNoiMoi_form.resx">
+      <DependentUpon>taoKetNoiMoi_form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLy_forms\ThemCa_form.resx">
       <DependentUpon>ThemCa_form.cs</DependentUpon>

@@ -111,12 +111,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_CA557BF9DF424963A169C8A485A16B1E"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_CE130C0C0FA40AAE4C863BABCEEBBA69"
         "OwnerKey" = "8:_447BBE9DFA5F25182B8DA7E1047267D9"
         "MsmSig" = "8:_UNDEFINED"
@@ -135,8 +129,8 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_F489016509B5DE60C00256892EDBDD80"
+        "MsmKey" = "8:_FF2957982910477ABAEA715691E3DBEB"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -179,6 +173,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_2C490AC60B1DCD9030F03BDA356B00F7"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_F489016509B5DE60C00256892EDBDD80"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -493,26 +493,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_CA557BF9DF424963A169C8A485A16B1E"
-            {
-            "SourcePath" = "8:..\\QuanLyTiecCuoi\\CONNECTION_STRING.ini"
-            "TargetName" = "8:CONNECTION_STRING.ini"
-            "Tag" = "8:"
-            "Folder" = "8:_D3518BBC8F444B419F34924AECB3831F"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_CE130C0C0FA40AAE4C863BABCEEBBA69"
             {
             "AssemblyRegister" = "3:1"
@@ -606,6 +586,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FF2957982910477ABAEA715691E3DBEB"
+            {
+            "SourcePath" = "8:..\\QuanLyTiecCuoi\\CONNECTION_STRING.ini"
+            "TargetName" = "8:CONNECTION_STRING.ini"
+            "Tag" = "8:"
+            "Folder" = "8:_D3518BBC8F444B419F34924AECB3831F"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
         }
         "FileType"
         {
@@ -649,6 +649,13 @@
         }
         "LaunchCondition"
         {
+            "{836E08B8-0285-4809-BA42-01DB6754A45D}:_75394ABF8FAD449FACA8F7E2322D67B9"
+            {
+            "Name" = "8:AdminPermission"
+            "Condition" = "8:AdminUser"
+            "Message" = "8:<Error Message>"
+            "InstallUrl" = "8:"
+            }
         }
         "Locator"
         {
@@ -663,7 +670,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:SetupQuanLyTiecCuoi"
         "ProductCode" = "8:{9578372D-95B3-40AE-AECF-DE1A7D071D26}"
-        "PackageCode" = "8:{59F56AC1-F40B-4AD0-B410-15208233E037}"
+        "PackageCode" = "8:{9AF91287-209B-4BA9-837C-15B4B27B44D8}"
         "UpgradeCode" = "8:{E9780C09-BA55-4DF1-9553-9AC422013A77}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
