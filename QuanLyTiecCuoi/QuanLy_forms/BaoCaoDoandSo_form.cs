@@ -36,6 +36,7 @@ namespace QuanLyTiecCuoi.QuanLy_forms
             dgvBaoCao.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvBaoCao.ReadOnly = true;
             dgvBaoCao.MultiSelect = false;
+            TinhTongDoanhThu();
         }
 
         private void TinhTongDoanhThu()
@@ -55,12 +56,11 @@ namespace QuanLyTiecCuoi.QuanLy_forms
             numThang.Value = DateTime.Today.Month;
             numNam.Value = DateTime.Today.Year;
             LoadBaoCao();
-            TinhTongDoanhThu();
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            LoadBaoCao();
+            
         }
 
         private void UpdateBC()
@@ -123,6 +123,16 @@ namespace QuanLyTiecCuoi.QuanLy_forms
             {
                 AddBC();
             }
+        }
+
+        private void NumThang_ValueChanged(object sender, EventArgs e)
+        {
+            LoadBaoCao();
+        }
+
+        private void NumNam_ValueChanged(object sender, EventArgs e)
+        {
+            LoadBaoCao();
         }
     }
 }
