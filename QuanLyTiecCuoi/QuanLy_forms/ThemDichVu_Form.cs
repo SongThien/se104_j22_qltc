@@ -41,11 +41,11 @@ namespace QuanLyTiecCuoi.QuanLy_forms
         {
             int bonus = 0;
             String[] d = BUS_QuanLyDichVu.getDsMaDichVu();
-            string ma = String.Format("MDV{0}", d.Length + 1 + bonus);
+            string ma = String.Format("DV{0}", d.Length + 1 + bonus);
             while (d.Contains(ma))
             {
                 bonus++;
-                ma = String.Format("MDV{0}", d.Length + 1 + bonus);
+                ma = String.Format("DV{0}", d.Length + 1 + bonus);
             }
             return ma;
         }

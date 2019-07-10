@@ -40,11 +40,11 @@ namespace QuanLyTiecCuoi.QuanLy_forms
         {
             int bonus = 0;
             String[] d = BUS.BUS_QuanLyMonAn.getDsMaMonAn();
-            string ma = String.Format("KH{0}", d.Length + 1 + bonus);
+            string ma = String.Format("MA{0}", d.Length + 1 + bonus);
             while (d.Contains(ma))
             {
                 bonus++;
-                ma = String.Format("KH{0}", d.Length + 1 + bonus);
+                ma = String.Format("MA{0}", d.Length + 1 + bonus);
             }
             return ma;
         }
@@ -77,7 +77,7 @@ namespace QuanLyTiecCuoi.QuanLy_forms
                 return;
             }
             DTO.DTO_MonAn ma = new DTO.DTO_MonAn();
-            ma.MA_MON_AN = lbMa.Text;
+            ma.MA_MON_AN = dtMonAn.Rows[dtMonAn.CurrentCell.RowIndex].Cells[0].Value.ToString();
             ma.TEN_MON_AN = lbTen.Text;
             ma.DON_GIA = int.Parse(lbDonGia.Text);
             if (BUS.BUS_QuanLyMonAn.suaMonAn(ma) == true)
@@ -104,9 +104,8 @@ namespace QuanLyTiecCuoi.QuanLy_forms
 
         private void DtMonAn_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            lbMa.Text = dtMonAn.CurrentRow.Cells[0].Value.ToString();
-            lbTen.Text = dtMonAn.CurrentRow.Cells[1].Value.ToString();
-            lbDonGia.Text = dtMonAn.CurrentRow.Cells[2].Value.ToString();
+            lbTen.Text = dtMonAn.Rows[dtMonAn.CurrentCell.RowIndex].Cells[1].Value.ToString();
+            lbDonGia.Text = dtMonAn.Rows[dtMonAn.CurrentCell.RowIndex].Cells[1].Value.ToString();
         }
     }
 }

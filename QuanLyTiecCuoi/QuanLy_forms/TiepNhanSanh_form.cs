@@ -127,7 +127,7 @@ namespace QuanLyTiecCuoi
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow drs = DgvDanhSachSanh.SelectedRows[0];
+            DataGridViewRow drs = DgvDanhSachSanh.Rows[DgvDanhSachSanh.CurrentCell.RowIndex];
             txtTenSanh.Text = drs.Cells[1].Value.ToString();
             LoaiSanh.Text = drs.Cells[2].Value.ToString();
             soLuongban.Value = Decimal.Parse(drs.Cells[3].Value.ToString()); 

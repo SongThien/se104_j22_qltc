@@ -30,8 +30,6 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lbMa = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lbDonGia = new System.Windows.Forms.TextBox();
@@ -56,8 +54,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lbMa);
-            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.lbDonGia);
@@ -71,24 +67,6 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin món ăn";
-            // 
-            // lbMa
-            // 
-            this.lbMa.AutoSize = true;
-            this.lbMa.Location = new System.Drawing.Point(100, 28);
-            this.lbMa.Name = "lbMa";
-            this.lbMa.Size = new System.Drawing.Size(33, 13);
-            this.lbMa.TabIndex = 8;
-            this.lbMa.Text = "None";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 29);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Mã món ăn:";
             // 
             // label2
             // 
@@ -183,8 +161,6 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label lbMa;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox lbDonGia;
