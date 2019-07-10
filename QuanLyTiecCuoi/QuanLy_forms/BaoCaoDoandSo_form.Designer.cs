@@ -36,6 +36,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.numThang = new System.Windows.Forms.NumericUpDown();
             this.numNam = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lbMaBaoCao = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBaoCao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numThang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numNam)).BeginInit();
@@ -85,6 +87,7 @@
             this.button3.TabIndex = 8;
             this.button3.Text = "Lưu Báo Cáo";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // label1
             // 
@@ -139,11 +142,31 @@
             0,
             0});
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(65, 24);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(67, 13);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Mã báo cáo:";
+            // 
+            // lbMaBaoCao
+            // 
+            this.lbMaBaoCao.AutoSize = true;
+            this.lbMaBaoCao.Location = new System.Drawing.Point(166, 24);
+            this.lbMaBaoCao.Name = "lbMaBaoCao";
+            this.lbMaBaoCao.Size = new System.Drawing.Size(33, 13);
+            this.lbMaBaoCao.TabIndex = 13;
+            this.lbMaBaoCao.Text = "None";
+            // 
             // BaoCaoDoandSo_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(859, 571);
+            this.Controls.Add(this.lbMaBaoCao);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.numNam);
             this.Controls.Add(this.numThang);
             this.Controls.Add(this.label1);
@@ -172,5 +195,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown numThang;
         private System.Windows.Forms.NumericUpDown numNam;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbMaBaoCao;
     }
 }

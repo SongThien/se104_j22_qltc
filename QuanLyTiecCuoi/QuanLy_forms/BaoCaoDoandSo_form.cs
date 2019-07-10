@@ -25,6 +25,7 @@ namespace QuanLyTiecCuoi.QuanLy_forms
         private void LoadBaoCao()
         {
             string maBC = "BC" + numNam.Value.ToString() + "-" + numThang.Value.ToString();
+            lbMaBaoCao.Text = maBC;
             dgvBaoCao.DataSource = BUS.BUS_BaoCaoThang.getHoaDonTrongThang(numNam.Value.ToString(),numThang.Value.ToString());
             if (dgvBaoCao.Columns.Count < 1)
                 return;
@@ -47,6 +48,11 @@ namespace QuanLyTiecCuoi.QuanLy_forms
         private void Button1_Click(object sender, EventArgs e)
         {
             LoadBaoCao();
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

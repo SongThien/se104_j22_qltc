@@ -20,7 +20,7 @@ namespace QuanLyTiecCuoi
 
         private void Main_form_Load(object sender, EventArgs e)
         {
-
+            BUS.BUS_Main.taoKetNoi();
         }
 
         private void MenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -87,6 +87,19 @@ namespace QuanLyTiecCuoi
             Form x = new BaoCaoDoandSo_form();
             x.MdiParent = this;
             x.Show();
+        }
+
+        private void ThửKếtNốiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            bool state = BUS.BUS_Main.thuKetNoi();
+            if (state)
+            {
+                MessageBox.Show("Kết nối thành công");
+            }
+            else
+            {
+                MessageBox.Show("Kết nối thất bại");
+            }
         }
     }
 }

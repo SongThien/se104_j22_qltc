@@ -44,6 +44,7 @@
             this.qL = new System.Windows.Forms.ToolStripMenuItem();
             this.BaoCao = new System.Windows.Forms.ToolStripMenuItem();
             this.Ca = new System.Windows.Forms.ToolStripMenuItem();
+            this.thửKếtNốiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,6 +65,7 @@
             // tVu
             // 
             this.tVu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.thửKếtNốiToolStripMenuItem,
             this.Exit});
             this.tVu.Name = "tVu";
             this.tVu.Size = new System.Drawing.Size(53, 20);
@@ -72,7 +74,7 @@
             // Exit
             // 
             this.Exit.Name = "Exit";
-            this.Exit.Size = new System.Drawing.Size(105, 22);
+            this.Exit.Size = new System.Drawing.Size(180, 22);
             this.Exit.Text = "Thoát";
             this.Exit.Click += new System.EventHandler(this.exitProgram);
             // 
@@ -162,16 +164,23 @@
             // BaoCao
             // 
             this.BaoCao.Name = "BaoCao";
-            this.BaoCao.Size = new System.Drawing.Size(180, 22);
+            this.BaoCao.Size = new System.Drawing.Size(150, 22);
             this.BaoCao.Text = "Báo cáo tháng";
             this.BaoCao.Click += new System.EventHandler(this.BaoCao_Click);
             // 
             // Ca
             // 
             this.Ca.Name = "Ca";
-            this.Ca.Size = new System.Drawing.Size(180, 22);
+            this.Ca.Size = new System.Drawing.Size(150, 22);
             this.Ca.Text = "Quản lý ca";
             this.Ca.Click += new System.EventHandler(this.Ca_Click);
+            // 
+            // thửKếtNốiToolStripMenuItem
+            // 
+            this.thửKếtNốiToolStripMenuItem.Name = "thửKếtNốiToolStripMenuItem";
+            this.thửKếtNốiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.thửKếtNốiToolStripMenuItem.Text = "Thử kết nối";
+            this.thửKếtNốiToolStripMenuItem.Click += new System.EventHandler(this.ThửKếtNốiToolStripMenuItem_Click);
             // 
             // main_form
             // 
@@ -209,5 +218,6 @@
         private System.Windows.Forms.ToolStripMenuItem traTiệcCướiToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem thửKếtNốiToolStripMenuItem;
     }
 }

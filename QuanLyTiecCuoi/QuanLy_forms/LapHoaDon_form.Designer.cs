@@ -70,6 +70,8 @@
             this.cmbMaTiecCuoi2 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.lbMaTiecCuoi = new System.Windows.Forms.Label();
+            this.lbTienThanhToan = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -317,6 +319,8 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.label7);
+            this.groupBox5.Controls.Add(this.lbTienThanhToan);
             this.groupBox5.Controls.Add(this.cbPhat);
             this.groupBox5.Controls.Add(this.label27);
             this.groupBox5.Controls.Add(this.dtpNgayThanhToan);
@@ -331,7 +335,7 @@
             this.groupBox5.Controls.Add(this.label18);
             this.groupBox5.Location = new System.Drawing.Point(672, 102);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(336, 229);
+            this.groupBox5.Size = new System.Drawing.Size(336, 293);
             this.groupBox5.TabIndex = 8;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Thông tin thanh toán";
@@ -450,7 +454,7 @@
             // bttThanhToan
             // 
             this.bttThanhToan.Enabled = false;
-            this.bttThanhToan.Location = new System.Drawing.Point(672, 359);
+            this.bttThanhToan.Location = new System.Drawing.Point(672, 420);
             this.bttThanhToan.Name = "bttThanhToan";
             this.bttThanhToan.Size = new System.Drawing.Size(336, 69);
             this.bttThanhToan.TabIndex = 9;
@@ -495,6 +499,24 @@
             this.lbMaTiecCuoi.TabIndex = 11;
             this.lbMaTiecCuoi.Text = "None";
             this.lbMaTiecCuoi.Click += new System.EventHandler(this.LbMaTiecCuoi_Click);
+            // 
+            // lbTienThanhToan
+            // 
+            this.lbTienThanhToan.Location = new System.Drawing.Point(121, 234);
+            this.lbTienThanhToan.Name = "lbTienThanhToan";
+            this.lbTienThanhToan.Size = new System.Drawing.Size(200, 20);
+            this.lbTienThanhToan.TabIndex = 7;
+            this.lbTienThanhToan.Text = "0";
+            this.lbTienThanhToan.TextChanged += new System.EventHandler(this.LbTienThanhToan_TextChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(22, 237);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(85, 13);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "Tiền thanh toán:";
             // 
             // LapHoaDon_form
             // 
@@ -575,5 +597,7 @@
         private System.Windows.Forms.ComboBox cmbMaTiecCuoi2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lbMaTiecCuoi;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox lbTienThanhToan;
     }
 }

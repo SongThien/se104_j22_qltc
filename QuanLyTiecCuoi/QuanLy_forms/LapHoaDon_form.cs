@@ -191,7 +191,12 @@ namespace QuanLyTiecCuoi.QuanLy_forms
             hd.NGAY_THANH_TOAN = dtpNgayThanhToan.Value.ToString("yyyy-MM-d");
             hd.TONG_TIEN_BAN = int.Parse(lbTongTienBan.Text) + int.Parse(lbTienDatCoc.Text);
             hd.TONG_TIEN_DICH_VU = int.Parse(lbTienAn.Text) + int.Parse(lbTienDV.Text);
-            hd.TONG_TIEN_HOA_DON = int.Parse(lbTong.Text.Split('.')[0]);
+            if (Math.Abs(int.Parse(lbTong.Text.Split('.')[0]) - int.Parse(lbTienThanhToan.Text)) > 1002)
+            {
+                MessageBox.Show("Số tiền xấp sỉ không được lớn hơn 1000");
+                return;
+            }
+            hd.TONG_TIEN_HOA_DON = int.Parse(lbTienThanhToan.Text);
             bool state =  BUS.BUS_LapHoaDon.themHoaDon(hd);
             if (!state)
             {
@@ -201,6 +206,7 @@ namespace QuanLyTiecCuoi.QuanLy_forms
             {
                 MessageBox.Show("Thanh toán thành công!");
                 bttThanhToan.Enabled = false;
+                lbTienThanhToan.Text = "0";
                 LoadDs();
             }
         }
@@ -216,6 +222,11 @@ namespace QuanLyTiecCuoi.QuanLy_forms
             HienThiHoaDon(lbMaTiecCuoi.Text);
             bttThanhToan.Enabled = false;
             cmbMaTiecCuoi.Text = "";
+        }
+
+        private void LbTienThanhToan_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
