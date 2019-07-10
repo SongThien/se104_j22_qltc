@@ -191,7 +191,7 @@ namespace QuanLyTiecCuoi.QuanLy_forms
             hd.NGAY_THANH_TOAN = dtpNgayThanhToan.Value.ToString("yyyy-MM-d");
             hd.TONG_TIEN_BAN = int.Parse(lbTongTienBan.Text) + int.Parse(lbTienDatCoc.Text);
             hd.TONG_TIEN_DICH_VU = int.Parse(lbTienAn.Text) + int.Parse(lbTienDV.Text);
-            hd.TONG_TIEN_HOA_DON = int.Parse(lbTong.Text);
+            hd.TONG_TIEN_HOA_DON = int.Parse(lbTong.Text.Split('.')[0]);
             bool state =  BUS.BUS_LapHoaDon.themHoaDon(hd);
             if (!state)
             {

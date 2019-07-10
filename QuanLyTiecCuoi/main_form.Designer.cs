@@ -33,17 +33,17 @@
             this.Exit = new System.Windows.Forms.ToolStripMenuItem();
             this.tC = new System.Windows.Forms.ToolStripMenuItem();
             this.TiepNhanSanh = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.DatTiecCuoi = new System.Windows.Forms.ToolStripMenuItem();
-            this.LapHoaDon = new System.Windows.Forms.ToolStripMenuItem();
             this.traTiệcCướiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.LapHoaDon = new System.Windows.Forms.ToolStripMenuItem();
             this.dV = new System.Windows.Forms.ToolStripMenuItem();
             this.DichVu = new System.Windows.Forms.ToolStripMenuItem();
             this.MonAn = new System.Windows.Forms.ToolStripMenuItem();
             this.qL = new System.Windows.Forms.ToolStripMenuItem();
             this.BaoCao = new System.Windows.Forms.ToolStripMenuItem();
             this.Ca = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,7 +72,7 @@
             // Exit
             // 
             this.Exit.Name = "Exit";
-            this.Exit.Size = new System.Drawing.Size(180, 22);
+            this.Exit.Size = new System.Drawing.Size(105, 22);
             this.Exit.Text = "Thoát";
             this.Exit.Click += new System.EventHandler(this.exitProgram);
             // 
@@ -96,6 +96,11 @@
             this.TiepNhanSanh.Text = "Tiếp nhận sảnh";
             this.TiepNhanSanh.Click += new System.EventHandler(this.TiepNhanSanh_Click);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(152, 6);
+            // 
             // DatTiecCuoi
             // 
             this.DatTiecCuoi.Name = "DatTiecCuoi";
@@ -103,19 +108,24 @@
             this.DatTiecCuoi.Text = "Đặt tiệc cưới";
             this.DatTiecCuoi.Click += new System.EventHandler(this.DatTiecCuoi_Click);
             // 
-            // LapHoaDon
-            // 
-            this.LapHoaDon.Name = "LapHoaDon";
-            this.LapHoaDon.Size = new System.Drawing.Size(155, 22);
-            this.LapHoaDon.Text = "Lập hoá đơn";
-            this.LapHoaDon.Click += new System.EventHandler(this.LapHoaDon_Click);
-            // 
             // traTiệcCướiToolStripMenuItem
             // 
             this.traTiệcCướiToolStripMenuItem.Name = "traTiệcCướiToolStripMenuItem";
             this.traTiệcCướiToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.traTiệcCướiToolStripMenuItem.Text = "Tra tiệc cưới";
             this.traTiệcCướiToolStripMenuItem.Click += new System.EventHandler(this.TraTiệcCướiToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(152, 6);
+            // 
+            // LapHoaDon
+            // 
+            this.LapHoaDon.Name = "LapHoaDon";
+            this.LapHoaDon.Size = new System.Drawing.Size(155, 22);
+            this.LapHoaDon.Text = "Lập hoá đơn";
+            this.LapHoaDon.Click += new System.EventHandler(this.LapHoaDon_Click);
             // 
             // dV
             // 
@@ -129,14 +139,14 @@
             // DichVu
             // 
             this.DichVu.Name = "DichVu";
-            this.DichVu.Size = new System.Drawing.Size(180, 22);
+            this.DichVu.Size = new System.Drawing.Size(115, 22);
             this.DichVu.Text = "Dịch vụ";
             this.DichVu.Click += new System.EventHandler(this.DichVu_Click);
             // 
             // MonAn
             // 
             this.MonAn.Name = "MonAn";
-            this.MonAn.Size = new System.Drawing.Size(180, 22);
+            this.MonAn.Size = new System.Drawing.Size(115, 22);
             this.MonAn.Text = "Món ăn";
             this.MonAn.Click += new System.EventHandler(this.MonAn_Click);
             // 
@@ -154,6 +164,7 @@
             this.BaoCao.Name = "BaoCao";
             this.BaoCao.Size = new System.Drawing.Size(180, 22);
             this.BaoCao.Text = "Báo cáo tháng";
+            this.BaoCao.Click += new System.EventHandler(this.BaoCao_Click);
             // 
             // Ca
             // 
@@ -161,16 +172,6 @@
             this.Ca.Size = new System.Drawing.Size(180, 22);
             this.Ca.Text = "Quản lý ca";
             this.Ca.Click += new System.EventHandler(this.Ca_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
             // 
             // main_form
             // 

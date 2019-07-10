@@ -46,3 +46,4 @@ C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\QuanLyTiecCuoi\obj\Debug\Qua
 C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\QuanLyTiecCuoi\obj\Debug\QuanLyTiecCuoi.QuanLy_forms.ThemCa_form.resources
 C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\QuanLyTiecCuoi\obj\Debug\QuanLyTiecCuoi.QuanLy_forms.ThemDichVu_Form.resources
 C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\QuanLyTiecCuoi\obj\Debug\QuanLyTiecCuoi.QuanLy_forms.themMonAn_form.resources
+C:\Users\MSI GAMING\Documents\GitHub\se104_j22_qltc\QuanLyTiecCuoi\obj\Debug\QuanLyTiecCuoi.QuanLy_forms.BaoCaoDoandSo_form.resources
