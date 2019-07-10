@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BUS", "BUS\BUS.csproj", "{1
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAO", "DAO\DAO.csproj", "{2CBB644C-CC6C-41BD-8F49-1915A7B88263}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO", "DTO\DTO.csproj", "{F4EE9EBA-0D10-4484-AD93-0BFFEAD6FCF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DTO", "DTO\DTO.csproj", "{F4EE9EBA-0D10-4484-AD93-0BFFEAD6FCF4}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupQuanLyTiecCuoi", "SetupQuanLyTiecCuoi\SetupQuanLyTiecCuoi.vdproj", "{5EA66EC3-AD3E-4255-A551-7FFBC1BD1D82}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,8 @@ Global
 		{F4EE9EBA-0D10-4484-AD93-0BFFEAD6FCF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4EE9EBA-0D10-4484-AD93-0BFFEAD6FCF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4EE9EBA-0D10-4484-AD93-0BFFEAD6FCF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EA66EC3-AD3E-4255-A551-7FFBC1BD1D82}.Debug|Any CPU.ActiveCfg = Debug
+		{5EA66EC3-AD3E-4255-A551-7FFBC1BD1D82}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

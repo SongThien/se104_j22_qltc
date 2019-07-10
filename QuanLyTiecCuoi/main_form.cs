@@ -20,7 +20,11 @@ namespace QuanLyTiecCuoi
 
         private void Main_form_Load(object sender, EventArgs e)
         {
-            BUS.BUS_Main.taoKetNoi();
+            bool state = BUS.BUS_Main.taoKetNoi();
+            if (!state)
+            {
+                MessageBox.Show("Không tìm thấy file \"CONNECTION_STRING.ini\"");
+            }
         }
 
         private void MenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)

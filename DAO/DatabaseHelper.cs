@@ -26,8 +26,8 @@ namespace DAO
                 //Data Source=ServerName;Initial Catalog = DatabaseName; User ID = UserName; Password = Password
                 //sCon = new SqlConnection(@"Data Source=DESKTOP-QCK00KC\SQLEXPRESS;Initial Catalog=QuanLyTiecCuoi;Integrated Security=True");
                 //sCon = new SqlConnection(@"Data Source=DESKTOP-QCK00KC\SQLEXPRESS;Initial Catalog=QuanLyTiecCuoi;Integrated Security=True");
-                //sCon = new SqlConnection(CONNECTION_STRING);
-                sCon = new SqlConnection(@"Data Source=MSI\SQLEXPRESS;Initial Catalog=QuanLyTiecCuoi;User ID =sa; Password =123");
+                sCon = new SqlConnection(CONNECTION_STRING);
+                //sCon = new SqlConnection(@"Data Source=MSI\SQLEXPRESS;Initial Catalog=QuanLyTiecCuoi;User ID =sa; Password =123");
 
                 //if (sCon.State == ConnectionState.Closed)
 

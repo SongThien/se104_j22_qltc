@@ -18,10 +18,17 @@ namespace BUS
 
         public static bool taoKetNoi()
         {
-            string cnnstring = File.ReadAllText("C:/Users/MSI GAMING/Documents/GitHub/se104_j22_qltc/QuanLyTiecCuoi/CONNECTION_STRING.ini");
-            DAO.DatabaseHelper.CONNECTION_STRING = cnnstring.Trim();
-            Console.WriteLine(cnnstring.Trim());
-            return true;
+            try
+            {
+                string cnnstring = File.ReadAllText("CONNECTION_STRING.ini");
+                DAO.DatabaseHelper.CONNECTION_STRING = cnnstring.Trim();
+                Console.WriteLine(cnnstring.Trim());
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }
