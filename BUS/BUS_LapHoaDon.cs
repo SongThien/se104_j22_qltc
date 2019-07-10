@@ -55,5 +55,10 @@ namespace BUS
         {
             return DAO.DAO_HoaDonThanhToan.getDanhSachMaHoaDon();
         }
+
+        public static String[] getDanhSachMaBaoCao()
+        {
+            return DAO.DAO_BaoCaoDoanhSo.getDanhSachMaBaoCao();
+        }
     }
 }

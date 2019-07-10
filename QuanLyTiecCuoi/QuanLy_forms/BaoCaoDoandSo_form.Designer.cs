@@ -33,7 +33,7 @@
             this.dgvBaoCao = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbTongDoanhthu = new System.Windows.Forms.Label();
             this.numThang = new System.Windows.Forms.NumericUpDown();
             this.numNam = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
@@ -89,14 +89,14 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
-            // label1
+            // lbTongDoanhthu
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(163, 99);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(13, 13);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "0";
+            this.lbTongDoanhthu.AutoSize = true;
+            this.lbTongDoanhthu.Location = new System.Drawing.Point(163, 99);
+            this.lbTongDoanhthu.Name = "lbTongDoanhthu";
+            this.lbTongDoanhthu.Size = new System.Drawing.Size(13, 13);
+            this.lbTongDoanhthu.TabIndex = 9;
+            this.lbTongDoanhthu.Text = "0";
             // 
             // numThang
             // 
@@ -164,12 +164,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(859, 571);
+            this.ClientSize = new System.Drawing.Size(850, 571);
             this.Controls.Add(this.lbMaBaoCao);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.numNam);
             this.Controls.Add(this.numThang);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbTongDoanhthu);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvBaoCao);
@@ -192,7 +192,7 @@
         private System.Windows.Forms.DataGridView dgvBaoCao;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbTongDoanhthu;
         private System.Windows.Forms.NumericUpDown numThang;
         private System.Windows.Forms.NumericUpDown numNam;
         private System.Windows.Forms.Label label4;
